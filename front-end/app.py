@@ -22,6 +22,10 @@ def index():
 def signup():
     return render_template('signup.html')
 
+@app.route('/displaycontent')
+def displaycontent():
+    return render_template('displaycontent.html')
+
 @app.route('/signin', methods=['GET', 'POST'])
 def signin():
     if request.method == 'POST':
