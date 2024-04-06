@@ -3,9 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dynamic Blocks</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 0;
+        }
+
+        /* Style for the horizontal scrolling container */
+        .horizontal-scroll {
+            overflow-x: hidden; /* Hide the horizontal scrollbar */
+            white-space: nowrap;
+            margin-bottom: 20px;
+            position: relative; /* Needed for absolute positioning */
+        }
+
+        .interests-container {
+            display: inline-block;
+            vertical-align: top;
+            white-space: normal;
+            width: calc(100% - 40px); /* Subtract padding from the container width */
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .content-block {
+            display: inline-block;
+            vertical-align: top;
+            width: 200px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-right: 20px;
+            opacity: 0; /* Initially hide all blocks */
+            transition: opacity 0.3s ease; /* Smooth transition for opacity change */
+        }
+
+        .content-block.active {
+            opacity: 1; /* Show active blocks */
+        }
+
+        .content-block img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        /* Style for side buttons */
+        .scroll-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .scroll-button-left {
+            left: 0;
+        }
+
+        .scroll-button-right {
+            right: 0;
+        }
+    </style>
 </head>
 <body>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero labore amet ea totam, error neque repudiandae est repellat expedita rem voluptatibus alias exercitationem quis unde ut, molestiae dolore nesciunt soluta.</p>
+    <h2>Music</h2>
+    <div class="horizontal-scroll">
+        <div id="music-interests" class="interests-container"></div>
+        <button class="scroll-button scroll-button-left" onclick="scrollLeft('music')">&#10094;</button>
+        <button class="scroll-button scroll-button-right" onclick="scrollRight('music')">&#10095;</button>
+    </div>
+
+    <h2>Dance</h2>
+    <div class="horizontal-scroll">
+        <div id="dance-interests" class="interests-container"></div>
+        <button class="scroll-button scroll-button-left" onclick="scrollLeft('dance')">&#10094;</button>
+        <button class="scroll-button scroll-button-right" onclick="scrollRight('dance')">&#10095;</button>
+    </div>
+
+    <script>
+        var data = [
+            {
+                "interest": "music",
+                "content": [
+                    {"image": "imageURL1"},
+                    {"image": "imageURL2"},
+                    {"image": "imageURL3"},
+                    {"image": "imageURL4"},
+                    {"image": "imageURL5"},
+                    {"image": "imageURL6"},
+                    {"image": "imageURL7"},
+                    {"image": "imageURL8"}
+                ]
+            },
+            {
+                "interest": "dance",
+                "content": [
+                    {"image": "imageURL9"},
+                    {"image": "imageURL10"},
+                    {"image": "imageURL11"},
+                    {"image": "imageURL12"},
+                    {"image": "imageURL13"},
+                    {"image": "imageURL14"},
+                    {"image": "imageURL15"},
+                    {"image": "imageURL16"}
+                ]
+            }
+        ];
+
+        function createBlocks() {
+            data.forEach(function(interestData) {
+                var interestsDiv = document.getElementById(interestData.interest + '-interests');
+                
+                interestData.content.forEach(function(contentData, index) {
+                    var contentDiv = document.createElement('div');
+                    contentDiv.className = 'content-block';
+                    if (index < 4) {
+                        contentDiv.classList.add('active'); // Show the first 4 blocks
+                    }
+
+                    var image = document.createElement('img');
+                    image.src = contentData.image;
+                    image.alt = interestData.interest;
+                    contentDiv.appendChild(image);
+
+                    interestsDiv.appendChild(contentDiv);
+                });
+            });
+        }
+
+        createBlocks();
+
+        // Function to scroll left
+        function scrollLeft(interest) {
+            var container = document.getElementById(interest + '-interests');
+            var scrollAmount = Math.max(container.scrollLeft - 240, 0); // Adjust scroll distance as needed
+            container.scrollTo({
+                top: 0,
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+
+        // Function to scroll right
+        function scrollRight(interest) {
+            var container = document.getElementById(interest + '-interests');
+            var scrollAmount = Math.min(container.scrollLeft + 240, container.scrollWidth - container.clientWidth); // Adjust scroll distance as needed
+            container.scrollTo({
+                top: 0,
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    </script>
 </body>
 </html>
