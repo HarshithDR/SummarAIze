@@ -1,6 +1,5 @@
 // Initialize allInterests array outside of the event listener
 var allInterests = [];
-import { get_newsfeed } from './newsfeed.js';
 
 document.getElementById("interestForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent default form submission
@@ -44,6 +43,7 @@ document.getElementById("interestForm").addEventListener("submit", function(even
 
 // Function to submit interests
 function submitInterests() {
+    
     // Get the interests list container
     var interestsList = document.getElementById('interestsList');
   
@@ -91,3 +91,21 @@ function submitInterests() {
         console.error('There was a problem with the fetch operation:', error);
     });
 }
+
+
+function get_newsfeed(userId) {
+    // Make an HTTP GET request to the server running on port 5001
+    fetch('http://localhost:5001/newsfeed?user_id='+userId, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': 'http://localhost:5001'
+        }
+    })
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+        });
+    } 
