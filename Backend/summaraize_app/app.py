@@ -6,8 +6,10 @@ app = Flask(__name__)
 CORS(app)
 @app.route('/interests', methods=['POST','GET'])
 def userinterest():
-    print(request.args)
-    return set_user_interests(request.args.get('useremail'),request.args.get('user_interest'))
+    data = request.json
+    user_email = data.get('useremail')
+    user_interest = data.get('user_interest')
+    return set_user_interests(user_interest,user_email)
 
 
 @app.route('/newsfeed', methods=['GET'])

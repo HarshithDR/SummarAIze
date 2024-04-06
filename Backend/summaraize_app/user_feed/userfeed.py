@@ -1,2 +1,4 @@
+import json
+
 def accessuserfeed(userId):
-    return 'Im still under build'
+    return {'userId': userId, 'message': 'Im still under build'}
