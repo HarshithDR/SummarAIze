@@ -1,10 +1,11 @@
 from .db_setup import *
 
 def set_userinterest(useremail,interests):
+    print(useremail,interests)
     try:
         db = setup_db()
         cursor = db.cursor()
-        sql = "INSERT INTO interests (useremailid, interests) VALUES (%s, %s, %s)"
+        sql = "INSERT INTO interests (useremailid, interests) VALUES (%s, %s)"
         val = (useremail, interests)
         cursor.execute(sql, val)
         # Retrieve the last inserted ID
