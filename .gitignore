@@ -160,3 +160,4 @@ cython_debug/
 #.idea/
 
 /summaraize_ai
+/Backend/nodejs_server_app/node_modules
