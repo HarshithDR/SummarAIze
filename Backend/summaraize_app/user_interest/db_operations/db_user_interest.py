@@ -1,4 +1,4 @@
-from .db_setup import *
+from ...db_setup import *
 
 def set_userinterest(useremail,interests):
     print(useremail,interests)
@@ -11,6 +11,7 @@ def set_userinterest(useremail,interests):
         # Retrieve the last inserted ID
         last_insert_id = cursor.lastrowid
         db.commit()
+        db.close()
         print(cursor.rowcount, "record inserted.")
         return {"success" : True, "record_id" : last_insert_id}
     except Exception as e:
