@@ -9,7 +9,7 @@ def userinterest():
     data = request.json
     user_email = data.get('useremail')
     user_interest = data.get('user_interest')
-    return set_user_interests(user_interest,user_email)
+    return set_user_interests(user_email,user_interest)
 
 
 
