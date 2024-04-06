@@ -18,14 +18,6 @@ def newsfeed():
     print(request.args)
     return accessuserfeed(request.args.get('user_id'))
 
-
-
-
-@app.route('/newsfeed', methods=['GET'])
-def newsfeed():
-    print(request.args)
-    return accessuserfeed(request.args.get('user_id'))
-
 if __name__ == '__main__':
     # Run the app on http://localhost:5000/ by default
     app.run(debug=True,port=5001)

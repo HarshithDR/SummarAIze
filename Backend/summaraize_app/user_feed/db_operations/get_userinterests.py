@@ -1,4 +1,4 @@
-from ...db_setup import *
+from db_setup import *
 
 def get_userinterests(userid):
     try:
