@@ -1,4 +1,5 @@
-// This code should replace your existing JavaScript handling for adding and submitting interests.
+// Initialize allInterests array outside of the event listener
+var allInterests = [];
 
 document.getElementById("interestForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent default form submission
@@ -62,6 +63,25 @@ function submitInterests() {
     // Log the interests string to the console (you can remove this line if you don't need it)
     console.log('Interests submitted:', interestsString);
   
-    // Here you can do whatever you want with the interests string, such as sending it to the server
-  }
-  
+    // Make an HTTP POST request to the server running on port 5001
+    fetch('http://localhost:5001/submit-interests', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ interests: interestsString })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();
+    })
+    .then(data => {
+        console.log('Response from server:', data);
+        // Handle the response from the server if needed
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+}
