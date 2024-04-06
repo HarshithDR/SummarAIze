@@ -1,8 +1,14 @@
 from flask import Flask, render_template, session, request, redirect, url_for,jsonify
 from db import access_data, add_interests_to_database
+from flask_cors import CORS
+import os
+secret_key = os.urandom(24)
 
+print(secret_key)
 app = Flask(__name__)
-app.secret_key = 'your_secret_key_here'  # Change this to a random string
+
+CORS(app, resources={r"/*": {"origins": "http://127.0.0.1:5000"}})
+app.secret_key = secret_key  # Change this to a random string
 
 @app.route('/')
 def landing():

@@ -64,12 +64,15 @@ function submitInterests() {
     console.log('Interests submitted:', interestsString);
   
     // Make an HTTP POST request to the server running on port 5001
-    fetch('http://localhost:5001/submit-interests', {
+    //Run the below command in mac terminal for CORS error
+    // open -na "Google Chrome" --args --disable-web-security --user-data-dir=/tmp/chrome_dev
+    fetch('http://localhost:5001/interests', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin'   : 'http://localhost:5001'
         },
-        body: JSON.stringify({ interests: interestsString })
+        body: JSON.stringify({ user_interest: interestsString, useremail: 'testuser123@gmail.com' })
     })
     .then(response => {
         if (!response.ok) {
