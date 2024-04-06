@@ -1,9 +1,8 @@
-// Define a global array to store all interests
-var allInterests = [];
+// This code should replace your existing JavaScript handling for adding and submitting interests.
 
 document.getElementById("interestForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent default form submission
-
+    
     var interest = document.getElementById("interest").value.trim(); // Get the entered interest, trimmed of whitespace
 
     if (interest) {

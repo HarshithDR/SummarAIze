@@ -36,7 +36,6 @@ def interests():
         return redirect(url_for('suggestions'))
     return render_template('interests.html')
 
-<<<<<<< HEAD
 @app.route('/suggestions')
 def suggestions():
     email = session.get('email')
@@ -81,11 +80,6 @@ def add_interest():
             return "Interest added successfully"
     except Exception as e:
         return f"Error: {str(e)}", 500  # Return error message with status code 500
-=======
-@app.route('/displaycontent')
-def displaycontent():
-    return render_template('displaycontent.html')
->>>>>>> 44db31107e26391c27a7539f3ec4cc53eadc6c23
 
 
 if __name__ == '__main__':
