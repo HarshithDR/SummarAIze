@@ -1,5 +1,5 @@
-from flask import Flask, render_template, session, request, redirect, url_for
-from db import access_data
+from flask import Flask, render_template, session, request, redirect, url_for,jsonify
+from db import access_data, add_interests_to_database
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key_here'  # Change this to a random string
@@ -81,6 +81,15 @@ def add_interest():
     except Exception as e:
         return f"Error: {str(e)}", 500  # Return error message with status code 500
 
-
+@app.route('/update_interests', methods=['POST'])
+def update_interests():
+    if 'email' in session:
+        email = session['email']
+        interests = request.json.get('interests')
+        add_interests_to_database(email, interests)
+        return jsonify({'message': 'Interests updated successfully'}), 200
+    else:
+        return jsonify({'error': 'User not logged in'}), 401
+    
 if __name__ == '__main__':
     app.run(debug=True)

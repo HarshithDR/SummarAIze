@@ -42,9 +42,26 @@ document.getElementById("interestForm").addEventListener("submit", function(even
 
 // Function to submit interests
 function submitInterests() {
-    console.log('Interests submitted:', allInterests);
-    // Potentially send this data to a server or process it as needed
-    // Example: POST request to a server endpoint
-}
-
-// Ensure the submit button or method is properly set up to call submitInterests when needed
+    // Get the interests list container
+    var interestsList = document.getElementById('interestsList');
+  
+    // Get all the interests elements
+    var interestsElements = interestsList.getElementsByClassName('interest');
+  
+    // Initialize an empty array to store interests
+    var interestsArray = [];
+  
+    // Loop through the interests elements and push their text content into the array
+    for (var i = 0; i < interestsElements.length; i++) {
+      interestsArray.push(interestsElements[i].innerText.trim());
+    }
+  
+    // Convert the array of interests into a single string separated by commas
+    var interestsString = interestsArray.join(', ');
+  
+    // Log the interests string to the console (you can remove this line if you don't need it)
+    console.log('Interests submitted:', interestsString);
+  
+    // Here you can do whatever you want with the interests string, such as sending it to the server
+  }
+  
