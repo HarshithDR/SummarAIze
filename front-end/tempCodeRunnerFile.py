@@ -75,7 +75,7 @@ def add_interest():
     # Insert data into the interests table
     try:
         with access_data() as cursor:
-            sql = "INSERT INTO interests (id, useremailid, interests) VALUES (1, %s, %s)"
+            sql = "INSERT INTO interests (useremailid, interests) VALUES (%s, %s)"
             cursor.execute(sql, (email, interest))
             return "Interest added successfully"
     except Exception as e:
