@@ -159,3 +159,9 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
+<<<<<<< HEAD
+=======
+
+#virtual environment
+/summaraize_ai
+>>>>>>> 44db31107e26391c27a7539f3ec4cc53eadc6c23
