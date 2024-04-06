@@ -12,6 +12,15 @@ def userinterest():
     return set_user_interests(user_interest,user_email)
 
 
+
+@app.route('/newsfeed', methods=['GET'])
+def newsfeed():
+    print(request.args)
+    return accessuserfeed(request.args.get('user_id'))
+
+
+
+
 @app.route('/newsfeed', methods=['GET'])
 def newsfeed():
     print(request.args)

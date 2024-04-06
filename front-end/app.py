@@ -10,6 +10,29 @@ app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "http://127.0.0.1:5000"}})
 app.secret_key = secret_key  # Change this to a random string
 
+
+interests = [
+    {
+        "interest": "music",
+        "content": [
+            {"image": "imageURL1", "videoId": "1"},
+            {"image": "imageURL2", "videoId": "2"},
+            {"image": "imageURL3", "videoId": "3"},
+            {"image": "imageURL4", "videoId": "4"}
+        ]
+    },
+    {
+        "interest": "dance",
+        "content": [
+            {"image": "imageURL5", "videoId": "5"},
+            {"image": "imageURL6", "videoId": "6"},
+            {"image": "imageURL7", "videoId": "7"},
+            {"image": "imageURL8", "videoId": "8"}
+        ]
+    }
+]
+
+
 @app.route('/')
 def landing():
     return render_template('landing.html')
@@ -44,8 +67,8 @@ def interests():
 
 @app.route('/suggestions')
 def suggestions():
-    email = session.get('email')
-    return render_template('suggestions.html', email=email)
+    
+    return render_template('suggestions.html')
 
 def store_interests_in_database(email, interests):
     # Connect to the database and store the interests associated with the email
