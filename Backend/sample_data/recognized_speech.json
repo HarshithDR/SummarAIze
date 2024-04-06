@@ -1,0 +1,1096 @@
+[
+    {
+        "result": [
+            {
+                "conf": 0.518441,
+                "end": 1.47,
+                "start": 0.93,
+                "word": "born"
+            },
+            {
+                "conf": 1.0,
+                "end": 2.13,
+                "start": 1.646702,
+                "word": "i'm"
+            },
+            {
+                "conf": 1.0,
+                "end": 2.64,
+                "start": 2.13,
+                "word": "sure"
+            }
+        ],
+        "text": "born i'm sure"
+    },
+    {
+        "result": [
+            {
+                "conf": 1.0,
+                "end": 4.83,
+                "start": 4.17,
+                "word": "you"
+            },
+            {
+                "conf": 1.0,
+                "end": 5.55,
+                "start": 4.92,
+                "word": "drunk"
+            }
+        ],
+        "text": "you drunk"
+    },
+    {
+        "result": [
+            {
+                "conf": 0.492324,
+                "end": 6.81,
+                "start": 6.42,
+                "word": "for"
+            },
+            {
+                "conf": 0.426924,
+                "end": 7.940935,
+                "start": 7.53,
+                "word": "their"
+            },
+            {
+                "conf": 0.527079,
+                "end": 8.110451,
+                "start": 7.940935,
+                "word": "with"
+            },
+            {
+                "conf": 1.0,
+                "end": 8.31,
+                "start": 8.110451,
+                "word": "the"
+            },
+            {
+                "conf": 1.0,
+                "end": 9.03,
+                "start": 8.49,
+                "word": "game"
+            },
+            {
+                "conf": 0.507226,
+                "end": 9.57,
+                "start": 9.03,
+                "word": "for"
+            }
+        ],
+        "text": "for their with the game for"
+    },
+    {
+        "result": [
+            {
+                "conf": 0.932658,
+                "end": 10.790304,
+                "start": 10.59,
+                "word": "you"
+            },
+            {
+                "conf": 0.631224,
+                "end": 10.98,
+                "start": 10.8,
+                "word": "are"
+            }
+        ],
+        "text": "you are"
+    },
+    {
+        "result": [
+            {
+                "conf": 0.73056,
+                "end": 12.78,
+                "start": 12.24,
+                "word": "can"
+            }
+        ],
+        "text": "can"
+    },
+    {
+        "result": [
+            {
+                "conf": 0.472778,
+                "end": 14.04,
+                "start": 13.83,
+                "word": "been"
+            },
+            {
+                "conf": 0.472778,
+                "end": 14.25,
+                "start": 14.04,
+                "word": "a"
+            }
+        ],
+        "text": "been a"
+    },
+    {
+        "result": [
+            {
+                "conf": 0.663702,
+                "end": 15.27,
+                "start": 15.12,
+                "word": "you"
+            },
+            {
+                "conf": 0.663702,
+                "end": 15.54,
+                "start": 15.27,
+                "word": "know"
+            },
+            {
+                "conf": 0.871426,
+                "end": 15.864478,
+                "start": 15.57,
+                "word": "i"
+            },
+            {
+                "conf": 0.871426,
+                "end": 16.078079,
+                "start": 15.864478,
+                "word": "am"
+            },
+            {
+                "conf": 0.840549,
+                "end": 16.62,
+                "start": 16.081992,
+                "word": "bunch"
+            },
+            {
+                "conf": 0.840549,
+                "end": 16.77,
+                "start": 16.62,
+                "word": "of"
+            },
+            {
+                "conf": 0.700347,
+                "end": 17.37,
+                "start": 16.92,
+                "word": "fun"
+            }
+        ],
+        "text": "you know i am bunch of fun"
+    },
+    {
+        "result": [
+            {
+                "conf": 0.545364,
+                "end": 18.24,
+                "start": 18.0,
+                "word": "based"
+            },
+            {
+                "conf": 0.690044,
+                "end": 18.9,
+                "start": 18.63,
+                "word": "on"
+            },
+            {
+                "conf": 0.539555,
+                "end": 19.02,
+                "start": 18.9,
+                "word": "the"
+            },
+            {
+                "conf": 0.457021,
+                "end": 19.11,
+                "start": 19.02,
+                "word": "a"
+            },
+            {
+                "conf": 0.508365,
+                "end": 19.8,
+                "start": 19.11,
+                "word": "broken"
+            },
+            {
+                "conf": 0.442497,
+                "end": 20.4,
+                "start": 19.805405,
+                "word": "sure"
+            },
+            {
+                "conf": 0.49359,
+                "end": 21.03,
+                "start": 20.708701,
+                "word": "she"
+            },
+            {
+                "conf": 1.0,
+                "end": 21.66,
+                "start": 21.21,
+                "word": "do"
+            },
+            {
+                "conf": 1.0,
+                "end": 22.5,
+                "start": 22.23,
+                "word": "you"
+            },
+            {
+                "conf": 0.331343,
+                "end": 22.89,
+                "start": 22.53,
+                "word": "shop"
+            },
+            {
+                "conf": 0.545035,
+                "end": 23.22,
+                "start": 22.95,
+                "word": "for"
+            }
+        ],
+        "text": "based on the a broken sure she do you shop for"
+    },
+    {
+        "result": [
+            {
+                "conf": 0.710647,
+                "end": 24.180769,
+                "start": 24.0,
+                "word": "when"
+            },
+            {
+                "conf": 0.454492,
+                "end": 24.355721,
+                "start": 24.180769,
+                "word": "you're"
+            },
+            {
+                "conf": 0.811005,
+                "end": 24.72,
+                "start": 24.355721,
+                "word": "on"
+            },
+            {
+                "conf": 0.814736,
+                "end": 25.282668,
+                "start": 24.84,
+                "word": "this"
+            },
+            {
+                "conf": 0.444977,
+                "end": 25.609135,
+                "start": 25.29,
+                "word": "horse"
+            },
+            {
+                "conf": 0.53574,
+                "end": 26.13,
+                "start": 25.609135,
+                "word": "share"
+            }
+        ],
+        "text": "when you're on this horse share"
+    },
+    {
+        "result": [
+            {
+                "conf": 0.476908,
+                "end": 27.93,
+                "start": 27.36,
+                "word": "once"
+            },
+            {
+                "conf": 0.918242,
+                "end": 28.77,
+                "start": 28.14,
+                "word": "and"
+            }
+        ],
+        "text": "once and"
+    },
+    {
+        "result": [
+            {
+                "conf": 0.190297,
+                "end": 30.12,
+                "start": 29.55,
+                "word": "spoons"
+            },
+            {
+                "conf": 1.0,
+                "end": 31.08,
+                "start": 30.509295,
+                "word": "both"
+            },
+            {
+                "conf": 1.0,
+                "end": 32.28,
+                "start": 31.68,
+                "word": "her"
+            },
+            {
+                "conf": 0.771761,
+                "end": 33.0,
+                "start": 32.79,
+                "word": "and"
+            },
+            {
+                "conf": 0.555914,
+                "end": 33.3,
+                "start": 33.0,
+                "word": "she"
+            },
+            {
+                "conf": 0.463918,
+                "end": 33.75,
+                "start": 33.36,
+                "word": "said"
+            }
+        ],
+        "text": "spoons both her and she said"
+    },
+    {
+        "result": [
+            {
+                "conf": 1.0,
+                "end": 36.12,
+                "start": 34.74,
+                "word": "bernstein"
+            },
+            {
+                "conf": 0.560313,
+                "end": 37.47,
+                "start": 36.84,
+                "word": "show"
+            },
+            {
+                "conf": 0.48711,
+                "end": 38.04,
+                "start": 37.642595,
+                "word": "which"
+            },
+            {
+                "conf": 0.749887,
+                "end": 39.09,
+                "start": 38.43,
+                "word": "costs"
+            },
+            {
+                "conf": 0.89928,
+                "end": 39.536389,
+                "start": 39.094984,
+                "word": "one"
+            },
+            {
+                "conf": 0.644624,
+                "end": 40.049938,
+                "start": 39.553352,
+                "word": "should"
+            },
+            {
+                "conf": 0.243932,
+                "end": 40.379066,
+                "start": 40.049938,
+                "word": "show"
+            }
+        ],
+        "text": "bernstein show which costs one should show"
+    },
+    {
+        "result": [
+            {
+                "conf": 0.333064,
+                "end": 41.52,
+                "start": 40.95,
+                "word": "most"
+            },
+            {
+                "conf": 0.798764,
+                "end": 42.67032,
+                "start": 41.94,
+                "word": "well"
+            },
+            {
+                "conf": 0.59186,
+                "end": 42.9,
+                "start": 42.67032,
+                "word": "and"
+            },
+            {
+                "conf": 0.538455,
+                "end": 43.56,
+                "start": 43.17,
+                "word": "car"
+            }
+        ],
+        "text": "most well and car"
+    },
+    {
+        "result": [
+            {
+                "conf": 0.949757,
+                "end": 44.1,
+                "start": 43.68,
+                "word": "your"
+            },
+            {
+                "conf": 0.325543,
+                "end": 44.69825,
+                "start": 44.34,
+                "word": "prints"
+            },
+            {
+                "conf": 0.33455,
+                "end": 45.24,
+                "start": 44.69825,
+                "word": "shoot"
+            },
+            {
+                "conf": 0.505266,
+                "end": 45.66,
+                "start": 45.39,
+                "word": "a"
+            },
+            {
+                "conf": 0.806638,
+                "end": 46.53,
+                "start": 45.931278,
+                "word": "watch"
+            },
+            {
+                "conf": 0.460498,
+                "end": 47.04,
+                "start": 46.53,
+                "word": "meter"
+            },
+            {
+                "conf": 0.800029,
+                "end": 47.97,
+                "start": 47.85,
+                "word": "and"
+            },
+            {
+                "conf": 0.976316,
+                "end": 48.51,
+                "start": 47.97,
+                "word": "show"
+            },
+            {
+                "conf": 0.946232,
+                "end": 48.858113,
+                "start": 48.6,
+                "word": "me"
+            },
+            {
+                "conf": 0.608647,
+                "end": 49.56,
+                "start": 49.433665,
+                "word": "and"
+            },
+            {
+                "conf": 0.987445,
+                "end": 50.07,
+                "start": 49.56,
+                "word": "she"
+            },
+            {
+                "conf": 0.987445,
+                "end": 50.58,
+                "start": 50.22,
+                "word": "knew"
+            }
+        ],
+        "text": "your prints shoot a watch meter and show me and she knew"
+    },
+    {
+        "result": [
+            {
+                "conf": 0.585066,
+                "end": 53.58,
+                "start": 52.8,
+                "word": "coach"
+            },
+            {
+                "conf": 0.446962,
+                "end": 54.12,
+                "start": 53.7,
+                "word": "now"
+            }
+        ],
+        "text": "coach now"
+    },
+    {
+        "result": [
+            {
+                "conf": 0.914549,
+                "end": 56.28,
+                "start": 55.92,
+                "word": "so"
+            },
+            {
+                "conf": 0.684074,
+                "end": 57.03,
+                "start": 56.31,
+                "word": "when's"
+            },
+            {
+                "conf": 1.0,
+                "end": 57.72,
+                "start": 57.42,
+                "word": "she"
+            },
+            {
+                "conf": 1.0,
+                "end": 58.23,
+                "start": 57.84,
+                "word": "was"
+            },
+            {
+                "conf": 1.0,
+                "end": 58.65,
+                "start": 58.26,
+                "word": "young"
+            },
+            {
+                "conf": 1.0,
+                "end": 59.25,
+                "start": 58.68,
+                "word": "she"
+            },
+            {
+                "conf": 0.799197,
+                "end": 59.88,
+                "start": 59.37,
+                "word": "vanished"
+            },
+            {
+                "conf": 0.675881,
+                "end": 59.974633,
+                "start": 59.88,
+                "word": "and"
+            },
+            {
+                "conf": 0.694827,
+                "end": 60.87,
+                "start": 60.0,
+                "word": "stronger"
+            },
+            {
+                "conf": 0.694827,
+                "end": 61.08,
+                "start": 60.87,
+                "word": "than"
+            },
+            {
+                "conf": 0.989521,
+                "end": 61.98,
+                "start": 61.41,
+                "word": "moon"
+            },
+            {
+                "conf": 0.846999,
+                "end": 62.46,
+                "start": 62.34,
+                "word": "and"
+            },
+            {
+                "conf": 0.50928,
+                "end": 63.03,
+                "start": 62.46,
+                "word": "show"
+            }
+        ],
+        "text": "so when's she was young she vanished and stronger than moon and show"
+    },
+    {
+        "result": [
+            {
+                "conf": 0.706547,
+                "end": 64.228821,
+                "start": 64.08,
+                "word": "and"
+            },
+            {
+                "conf": 0.492411,
+                "end": 64.68,
+                "start": 64.228821,
+                "word": "show"
+            },
+            {
+                "conf": 0.519248,
+                "end": 65.07,
+                "start": 64.68,
+                "word": "von"
+            },
+            {
+                "conf": 0.346013,
+                "end": 65.76,
+                "start": 65.07,
+                "word": "brunn"
+            },
+            {
+                "conf": 0.310704,
+                "end": 66.12,
+                "start": 65.762615,
+                "word": "burn"
+            }
+        ],
+        "text": "and show von brunn burn"
+    },
+    {
+        "result": [
+            {
+                "conf": 1.0,
+                "end": 67.26,
+                "start": 66.96,
+                "word": "a"
+            },
+            {
+                "conf": 1.0,
+                "end": 67.95,
+                "start": 67.35,
+                "word": "day"
+            },
+            {
+                "conf": 0.691388,
+                "end": 68.19,
+                "start": 68.1,
+                "word": "and"
+            },
+            {
+                "conf": 0.997306,
+                "end": 68.64,
+                "start": 68.19,
+                "word": "she"
+            },
+            {
+                "conf": 0.522139,
+                "end": 69.33,
+                "start": 68.73,
+                "word": "vanished"
+            },
+            {
+                "conf": 0.595278,
+                "end": 69.75,
+                "start": 69.33,
+                "word": "means"
+            },
+            {
+                "conf": 0.6009,
+                "end": 70.588909,
+                "start": 69.989172,
+                "word": "and"
+            },
+            {
+                "conf": 0.400605,
+                "end": 71.37,
+                "start": 71.1,
+                "word": "your"
+            },
+            {
+                "conf": 0.637496,
+                "end": 71.7,
+                "start": 71.38207,
+                "word": "grew"
+            },
+            {
+                "conf": 0.961614,
+                "end": 72.049761,
+                "start": 71.730337,
+                "word": "up"
+            }
+        ],
+        "text": "a day and she vanished means and your grew up"
+    },
+    {
+        "result": [
+            {
+                "conf": 0.597495,
+                "end": 74.61,
+                "start": 74.46,
+                "word": "and"
+            },
+            {
+                "conf": 0.848439,
+                "end": 75.18,
+                "start": 74.61,
+                "word": "strong"
+            },
+            {
+                "conf": 0.538128,
+                "end": 75.63,
+                "start": 75.24,
+                "word": "were"
+            },
+            {
+                "conf": 1.0,
+                "end": 76.38,
+                "start": 75.87,
+                "word": "trying"
+            },
+            {
+                "conf": 1.0,
+                "end": 76.83,
+                "start": 76.62,
+                "word": "to"
+            },
+            {
+                "conf": 0.705063,
+                "end": 77.76,
+                "start": 77.43,
+                "word": "reach"
+            },
+            {
+                "conf": 0.591716,
+                "end": 77.97,
+                "start": 77.862583,
+                "word": "and"
+            },
+            {
+                "conf": 1.0,
+                "end": 78.45,
+                "start": 77.97,
+                "word": "sure"
+            },
+            {
+                "conf": 1.0,
+                "end": 79.23,
+                "start": 78.78,
+                "word": "sure"
+            }
+        ],
+        "text": "and strong were trying to reach and sure sure"
+    },
+    {
+        "result": [
+            {
+                "conf": 0.36463,
+                "end": 82.05,
+                "start": 81.523843,
+                "word": "home"
+            },
+            {
+                "conf": 0.36463,
+                "end": 82.109729,
+                "start": 82.05,
+                "word": "she"
+            },
+            {
+                "conf": 0.569675,
+                "end": 82.29,
+                "start": 82.109729,
+                "word": "homes"
+            }
+        ],
+        "text": "home she homes"
+    },
+    {
+        "result": [
+            {
+                "conf": 0.458542,
+                "end": 83.46,
+                "start": 83.37,
+                "word": "he"
+            },
+            {
+                "conf": 0.59437,
+                "end": 83.973076,
+                "start": 83.487422,
+                "word": "actually"
+            },
+            {
+                "conf": 0.823621,
+                "end": 84.09,
+                "start": 83.973076,
+                "word": "the"
+            },
+            {
+                "conf": 0.937907,
+                "end": 84.72,
+                "start": 84.09,
+                "word": "average"
+            },
+            {
+                "conf": 0.838893,
+                "end": 85.44,
+                "start": 84.75,
+                "word": "from"
+            },
+            {
+                "conf": 1.0,
+                "end": 86.1,
+                "start": 85.65,
+                "word": "their"
+            },
+            {
+                "conf": 1.0,
+                "end": 87.21,
+                "start": 86.55,
+                "word": "homes"
+            },
+            {
+                "conf": 0.921866,
+                "end": 88.11,
+                "start": 87.51,
+                "word": "launched"
+            },
+            {
+                "conf": 0.507808,
+                "end": 88.68687,
+                "start": 88.135386,
+                "word": "know"
+            }
+        ],
+        "text": "he actually the average from their homes launched know"
+    },
+    {
+        "result": [
+            {
+                "conf": 0.590021,
+                "end": 90.81,
+                "start": 90.24,
+                "word": "coach"
+            },
+            {
+                "conf": 0.359528,
+                "end": 91.23,
+                "start": 90.87,
+                "word": "for"
+            },
+            {
+                "conf": 0.44419,
+                "end": 91.676558,
+                "start": 91.44,
+                "word": "and"
+            },
+            {
+                "conf": 0.825148,
+                "end": 92.04,
+                "start": 91.676558,
+                "word": "she"
+            },
+            {
+                "conf": 0.635764,
+                "end": 93.0,
+                "start": 92.28,
+                "word": "smirks"
+            },
+            {
+                "conf": 1.0,
+                "end": 93.6,
+                "start": 93.09,
+                "word": "high"
+            },
+            {
+                "conf": 0.719449,
+                "end": 94.32,
+                "start": 93.84,
+                "word": "as"
+            },
+            {
+                "conf": 0.735565,
+                "end": 94.672595,
+                "start": 94.415288,
+                "word": "as"
+            },
+            {
+                "conf": 1.0,
+                "end": 95.43,
+                "start": 94.866467,
+                "word": "show"
+            },
+            {
+                "conf": 0.733042,
+                "end": 95.91,
+                "start": 95.52,
+                "word": "me"
+            },
+            {
+                "conf": 0.900551,
+                "end": 96.3,
+                "start": 96.06,
+                "word": "a"
+            },
+            {
+                "conf": 0.229604,
+                "end": 97.23,
+                "start": 96.84,
+                "word": "teach"
+            },
+            {
+                "conf": 0.42272,
+                "end": 97.83,
+                "start": 97.474219,
+                "word": "june"
+            }
+        ],
+        "text": "coach for and she smirks high as as show me a teach june"
+    },
+    {
+        "result": [
+            {
+                "conf": 0.513773,
+                "end": 99.78,
+                "start": 98.85,
+                "word": "boom"
+            },
+            {
+                "conf": 0.39832,
+                "end": 101.28,
+                "start": 100.68,
+                "word": "rocks"
+            }
+        ],
+        "text": "boom rocks"
+    },
+    {
+        "result": [
+            {
+                "conf": 0.465451,
+                "end": 103.793474,
+                "start": 103.504731,
+                "word": "she"
+            },
+            {
+                "conf": 0.651558,
+                "end": 104.76,
+                "start": 104.28,
+                "word": "since"
+            },
+            {
+                "conf": 0.593923,
+                "end": 105.06,
+                "start": 104.76,
+                "word": "two"
+            },
+            {
+                "conf": 0.877255,
+                "end": 105.87,
+                "start": 105.066987,
+                "word": "times"
+            },
+            {
+                "conf": 1.0,
+                "end": 105.99,
+                "start": 105.87,
+                "word": "and"
+            },
+            {
+                "conf": 0.761094,
+                "end": 106.47,
+                "start": 105.99,
+                "word": "sure"
+            },
+            {
+                "conf": 0.431818,
+                "end": 107.67,
+                "start": 107.1,
+                "word": "does"
+            },
+            {
+                "conf": 0.751013,
+                "end": 108.219529,
+                "start": 107.79,
+                "word": "poor"
+            },
+            {
+                "conf": 1.0,
+                "end": 108.93,
+                "start": 108.281748,
+                "word": "search"
+            },
+            {
+                "conf": 0.835727,
+                "end": 109.11,
+                "start": 108.93,
+                "word": "for"
+            },
+            {
+                "conf": 0.835727,
+                "end": 109.86,
+                "start": 109.38,
+                "word": "sure"
+            }
+        ],
+        "text": "she since two times and sure does poor search for sure"
+    },
+    {
+        "result": [
+            {
+                "conf": 0.536196,
+                "end": 111.66,
+                "start": 111.12,
+                "word": "mr"
+            },
+            {
+                "conf": 0.422656,
+                "end": 112.339373,
+                "start": 111.66,
+                "word": "cohen"
+            },
+            {
+                "conf": 0.620134,
+                "end": 112.83,
+                "start": 112.344836,
+                "word": "burn"
+            },
+            {
+                "conf": 0.97898,
+                "end": 113.61,
+                "start": 113.161414,
+                "word": "one"
+            },
+            {
+                "conf": 0.771916,
+                "end": 114.33,
+                "start": 113.94,
+                "word": "month"
+            }
+        ],
+        "text": "mr cohen burn one month"
+    },
+    {
+        "result": [
+            {
+                "conf": 0.298057,
+                "end": 115.41,
+                "start": 114.96,
+                "word": "come"
+            },
+            {
+                "conf": 0.525249,
+                "end": 116.4,
+                "start": 115.56,
+                "word": "fish"
+            },
+            {
+                "conf": 0.4841,
+                "end": 116.79,
+                "start": 116.52,
+                "word": "and"
+            }
+        ],
+        "text": "come fish and"
+    },
+    {
+        "result": [
+            {
+                "conf": 0.606493,
+                "end": 118.05,
+                "start": 117.6,
+                "word": "once"
+            }
+        ],
+        "text": "once"
+    },
+    {
+        "result": [
+            {
+                "conf": 0.360372,
+                "end": 119.01,
+                "start": 118.8,
+                "word": "you"
+            },
+            {
+                "conf": 0.379992,
+                "end": 119.79,
+                "start": 119.31,
+                "word": "world"
+            }
+        ],
+        "text": "you world"
+    }
+]
