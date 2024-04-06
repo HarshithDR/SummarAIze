@@ -23,6 +23,10 @@ def signin():
 def interest():
     return render_template('interests.html')
 
+@app.route('/displaycontent')
+def displaycontent():
+    return render_template('displaycontent.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
