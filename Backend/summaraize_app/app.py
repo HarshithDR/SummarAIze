@@ -1,8 +1,8 @@
 from flask import Flask,request
 from user_interest.userinterest import *
-
+from flask_cors import CORS
 app = Flask(__name__)
-
+CORS(app)
 @app.route('/interests', methods=['POST','GET'])
 def userinterest():
     print(request.args)

@@ -1,5 +1,6 @@
 // Initialize allInterests array outside of the event listener
 var allInterests = [];
+import { get_newsfeed } from './newsfeed.js';
 
 document.getElementById("interestForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent default form submission
@@ -83,6 +84,8 @@ function submitInterests() {
     .then(data => {
         console.log('Response from server:', data);
         // Handle the response from the server if needed
+        recordId = JSON.parse(data).record_id;
+        get_newsfeed(recordId);
     })
     .catch(error => {
         console.error('There was a problem with the fetch operation:', error);
