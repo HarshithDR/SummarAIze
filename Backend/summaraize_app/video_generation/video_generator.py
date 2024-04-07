@@ -3,9 +3,12 @@ import asyncio
 import fal_client
 import os
 import json
+import requests
+# from urllib.parse import urlparse, urlunparse, quote
 
 
 os.environ["FAL_KEY"] = "87f2014b-09d8-4027-8476-a78fa8516fe7:657a13ff290dd24425679e51effaf407"
+
 
 async def fetch_data(prompt):
     url = "http://localhost:3000/user_prompt"
@@ -17,12 +20,12 @@ async def fetch_data(prompt):
             else:
                 return {'error': 'Failed to fetch data', 'status_code': response.status}
 
-async def brx_fetch():
-    result = await fetch_data("soccer")
+async def brx_fetch(prompt_base):
+    result = await fetch_data(prompt_base)
     print(result)
     return result
 
-data = [{'brxId': '2f2f590e-4c12-4d11-9c4e-fc30a033ffbf', 'brxName': 'Summaraize', 'topLevelBrx': True, 'brxRes': {'output': '{"url":"https://firebasestorage.googleapis.com/v0/b/brx-frontend.appspot.com/o/imgGen%2FdalleGen%2F2f2f590e-4c12-4d11-9c4e-fc30a033ffbf%2F234f8caf-9e6f-4095-a0a7-70dad6d7fbf8%2Fcd42214f-1e05-47a3-ac91-00218fb411f9?alt=media&token=7b7fe302-258e-4749-b39f-943ce8ee39fc","revised_prompt":"An action-packed scene on a soccer field. A Middle-Eastern female player, in a blue and white uniform, is skillfully dribbling the ball, avoiding her opponents: a Caucasian male player in red and a South Asian female player in green. The audience in the stands are a mix of different descents, all cheering enthusiastically. Clear blue skies overhead and a lush, green field underfoot. The goal post is visible in the distance with black and a Hispanic female goalkeeper ready to defend."}'}}]
+# data = [{'brxId': '2f2f590e-4c12-4d11-9c4e-fc30a033ffbf', 'brxName': 'Summaraize', 'topLevelBrx': True, 'brxRes': {'output': '{"url":"https://firebasestorage.googleapis.com/v0/b/brx-frontend.appspot.com/o/imgGen%2FdalleGen%2F2f2f590e-4c12-4d11-9c4e-fc30a033ffbf%2F234f8caf-9e6f-4095-a0a7-70dad6d7fbf8%2Fcd42214f-1e05-47a3-ac91-00218fb411f9?alt=media&token=7b7fe302-258e-4749-b39f-943ce8ee39fc","revised_prompt":"An action-packed scene on a soccer field. A Middle-Eastern female player, in a blue and white uniform, is skillfully dribbling the ball, avoiding her opponents: a Caucasian male player in red and a South Asian female player in green. The audience in the stands are a mix of different descents, all cheering enthusiastically. Clear blue skies overhead and a lush, green field underfoot. The goal post is visible in the distance with black and a Hispanic female goalkeeper ready to defend."}'}}]
 
 def extract_url(data):
     try:
@@ -38,17 +41,14 @@ def extract_url(data):
         print(f"Error extracting URL: {e}")
         return None
 
-
-
 def fal_api_fun(url):
     os.environ["FAL_KEY"] = "87f2014b-09d8-4027-8476-a78fa8516fe7:657a13ff290dd24425679e51effaf407"
     handler = fal_client.submit(
         "fal-ai/fast-svd",
         arguments={
-            "image_url": {url}
+            "image_url": url
         },
     )
-
     log_index = 0
     for event in handler.iter_events(with_logs=True):
         if isinstance(event, fal_client.InProgress):
@@ -61,6 +61,24 @@ def fal_api_fun(url):
     print ('result')
     return result
 
+def download_video(url, save_dir):
+    try:
+        response = requests.get(url, stream=True)
+        filename = 'output_video' + ".mp4"  # Generate a random filename
+        save_path = os.path.join(save_dir, filename)
+        with open(save_path, 'wb') as file:
+            for chunk in response.iter_content(chunk_size=1024):
+                file.write(chunk)
+        print(f"Video downloaded successfully to {save_path}!")
+    except Exception as e:
+        print(f"Error downloading video: {e}")
 
-result_from_brx = asyncio.run(brx_fetch())
-url_from_fal = fal_api_fun(extract_url(result_from_brx))
+def video_gen_fun(promt):
+    result_from_brx = asyncio.run(brx_fetch(promt))
+    url_from_fal = fal_api_fun(extract_url(result_from_brx))
+    print(url_from_fal)
+    parsed_data = url_from_fal
+    video_url = parsed_data['video']['url']
+    save_path = "Backend\\summaraize_app\\video_generation"
+    download_video(video_url,save_path)
+    return True
