@@ -10,6 +10,4 @@ export async function brx_image_generator (userprompt) {
     brxObject.input['image_var'].value = userprompt; //change only this parameter
 
     return await brx.execute(brxObject)
-    
-
 }
