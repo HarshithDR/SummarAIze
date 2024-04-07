@@ -33,13 +33,13 @@ def interests():
         # Get interests from the form and store in the database
         interests = request.form.getlist('interest')
         store_interests_in_database(session.get('email'), interests)
-        return redirect(url_for('suggestions'))
+        return redirect(url_for('displaycontent'))
     return render_template('interests.html')
 
 @app.route('/suggestions')
 def suggestions():
     email = session.get('email')
-    return render_template('suggestions.html', email=email)
+    return render_template('displaycontent.html', email=email)
 
 def store_interests_in_database(email, interests):
     # Connect to the database and store the interests associated with the email
