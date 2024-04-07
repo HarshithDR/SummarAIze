@@ -40,7 +40,7 @@ def final_video_creater():
     video_path = caption_creater_and_video_audio_merger.start()
     
 def start():
-    list_of_all_json_filepaths = api_and_json_extraction('google')
+    list_of_all_json_filepaths = api_and_json_extraction('soccer')
     for filepath in list_of_all_json_filepaths:
         summary = llm_summarizer(filepath)
         print(type(summary))

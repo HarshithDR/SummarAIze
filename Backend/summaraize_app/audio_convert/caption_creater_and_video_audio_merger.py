@@ -2,7 +2,7 @@ from vosk import Model, KaldiRecognizer
 import os
 import json
 import wave
-from moviepy.editor import TextClip, CompositeVideoClip, ColorClip, concatenate_videoclips,VideoFileClip
+from moviepy.editor import TextClip, CompositeVideoClip, ColorClip, concatenate_videoclips,VideoFileClip, AudioFileClip
 import numpy as np
 import uuid
 
@@ -228,9 +228,16 @@ def final_video_generator(linelevel_subtitles):
     final_video = CompositeVideoClip([input_video] + all_linelevel_splits)
 
     # final_video = CompositeVideoClip([background_clip] + all_linelevel_splits)
+    audio_clip = AudioFileClip(audio_file)
+    repetitions = int(audio_clip.duration / input_video.duration) + 1
 
-    # Set the audio of the final video to be the same as the input video
-    final_video = final_video.set_audio(input_video.audio)
+    # Loop the video to match the duration of the audio
+    looped_video = concatenate_videoclips([input_video] * repetitions)
+    looped_video = looped_video.subclip(0, audio_clip.duration)  # Trim to match audio duration
+
+    # Set the audio of the final video to be your audio file
+    final_video = CompositeVideoClip([looped_video] + all_linelevel_splits)
+    final_video = final_video.set_audio(audio_clip)
     random_filename = "Backend/summaraize_app/final_video_folder/output_" + str(uuid.uuid4()) + ".mp4"
     # Save the final clip as a video file with the audio included
     final_video.write_videofile(random_filename, fps=24, codec="libx264", audio_codec="aac")
