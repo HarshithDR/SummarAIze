@@ -48,6 +48,6 @@ def start():
         audio_conv(summary)
 
         video_gen(summary)
-        video_path = final_video_creater()\
+        video_path = final_video_creater()
         
 start()
