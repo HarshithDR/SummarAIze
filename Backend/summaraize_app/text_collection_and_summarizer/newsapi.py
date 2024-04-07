@@ -84,8 +84,8 @@ def process_articles(query):
         
     return filename_list
 
-def newsapi(interest):
+def newsapi_fun(interest):
     filename_list_send = process_articles(interest)
     return filename_list_send
 
-newsapi("ai")
+# newsapi("ai")
