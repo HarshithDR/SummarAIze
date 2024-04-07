@@ -30,6 +30,6 @@ def api_and_json_extraction(interests):
         DataObjectList.append(DataObject(filePath,None))
 
 summarizer.file_load()
-audio_converter.converter(text)
+# audio_converter.converter(text)
 # prompt = "bitcoin"
-print(video_generator.video_gen_fun(prompt))
+# print(video_generator.video_gen_fun(prompt))

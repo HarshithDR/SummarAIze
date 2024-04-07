@@ -1,12 +1,123 @@
-import json
-# result_from_brx = asyncio.run(brx_fetch(promt))
-# result_from_brx = data
-# url_from_fal = fal_api_fun(extract_url(result_from_brx))
-# print(url_from_fal)
-url_from_fal = {'video': {'url': 'https://storage.googleapis.com/isolate-dev-hot-rooster_toolkit_bucket/github_110602490/a513a24218624a3d9baa385f3b81d5ec_reenc-tmpcpxws4_t.mp4?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gke-service-account%40isolate-dev-hot-rooster.iam.gserviceaccount.com%2F20240407%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20240407T074516Z&X-Goog-Expires=604800&X-Goog-SignedHeaders=host&X-Goog-Signature=06fa8fb91c07f6f98cf71a4454472dad82e17d6634d072a0979da83aede84356a75decc35685f3c1276070e0f3700b0c66a4c6bb81ec1e3eb64b4621e0dfedbbefb62aa85401f403fd046d8ab397c7a956d7aed6ff623ca4292b695f4f5ddd7e76f58e4f406ee09cc0b5863b5aa735b6b38c403506a430e30da5a735d49ed6c2c780cc7dd892b3db7c5b4530970153fc2c98ee5d3d56655e3431fe4cddf5b555f34d9e9b2806fe924f1701c63b3f6bbdc7ac3c5554e0e995f86e599562f82aff32cf4fbd583aeb9797238345760c7732af0f2825fd90736bc653cb3a59ccdc8a76a30b494d7705b05a2557a28f4b2641e383f650676dbafa0975530efa230c81', 'content_type': 'video/mp4', 'file_name': 'reenc-tmpcpxws4_t.mp4', 'file_size': 1067637}, 'seed': 9413975911279377712}
-parsed_data = url_from_fal
-video_url = parsed_data['video']['url']
-# save_path = "Backend\\summaraize_app\\video_generation"
-# download_video(video_url,save_path)
 
-print(type(video_url))
+import json
+
+def split_text_into_lines(data):
+    MaxChars = 80 
+    MaxDuration = 3.0
+    MaxGap = 1.5
+
+    subtitles = []
+    line = []
+    line_duration = 0
+    line_chars = 0
+
+    for result_data in data:
+        if "result" not in result_data:
+            print("Warning: Missing 'result' key in dictionary")
+            continue
+
+        result_list = result_data["result"]
+
+        for idx, word_data in enumerate(result_list):
+            if "start" not in word_data or "end" not in word_data or "word" not in word_data:
+                print(f"Warning: Missing key in dictionary at index {idx}")
+                continue
+
+            word = word_data["word"]
+            start = word_data["start"]
+            end = word_data["end"]
+
+            line.append(word_data)
+            line_duration += end - start
+            
+            temp = " ".join(item["word"] for item in line)
+
+            new_line_chars = len(temp)
+
+            duration_exceeded = line_duration > MaxDuration 
+            chars_exceeded = new_line_chars > MaxChars 
+            if idx > 0:
+                gap = start - result_list[idx - 1]['end']
+                maxgap_exceeded = gap > MaxGap
+            else:
+                maxgap_exceeded = False
+
+            if duration_exceeded or chars_exceeded or maxgap_exceeded:
+                if line:
+                    subtitle_line = {
+                        "text": " ".join(item["word"] for item in line),
+                        "start": line[0]["start"],
+                        "end": line[-1]["end"],
+                        "textcontents": line
+                    }
+                    subtitles.append(subtitle_line)
+                    line = []
+                    line_duration = 0
+                    line_chars = 0
+
+        if line:
+            subtitle_line = {
+                "text": " ".join(item["word"] for item in line),
+                "start": line[0]["start"],
+                "end": line[-1]["end"],
+                "textcontents": line
+            }
+            subtitles.append(subtitle_line)
+            line = []
+            line_duration = 0
+            line_chars = 0
+
+    return subtitles
+
+# Load word-level timestamps JSON from a file
+with open("C:\\Users\\harsh\\Desktop\\Python Projects\\SummarAIze\\Backend\\sample_data\\recognized_speech.json", "r") as file:
+    wordlevel_info_modified = json.load(file)
+
+linelevel_subtitles = split_text_into_lines(wordlevel_info_modified)
+print(linelevel_subtitles)
+
+
+# Write results to JSON file
+with open('output_json_file.json', 'w') as f:
+    json.dump(linelevel_subtitles, f, indent=4)
+    
+import json
+
+with open("C:\\Users\\harsh\\Desktop\\Python Projects\\SummarAIze\\output_json_file.json", "r") as f:
+    captions = json.load(f)
+dic_list = []
+print(len(captions))
+# for text_contents in captions[0]
+# for i in range(0,len(captions)):
+#     for text_contents in captions[i]:
+#         dic_list.append(text_contents.value())
+        
+        
+# print(dic_list)
+
+# text_contents = captions[0]['textcontents']
+
+# # Extracting words and confidence scores
+# words_with_confidence = [(item['word'], item['conf']) for item in text_contents]
+
+# print(words_with_confidence)
+
+all_text_contents = []
+
+# Loop through each item in the data list
+for item in captions:
+    # Extract textcontents from the current item
+    text_contents = item['textcontents']
+    # Extend the all_text_contents list with the textcontents of the current item
+    all_text_contents.extend(text_contents)
+
+print(all_text_contents)
+# Extracting words and confidence scores
+# words_with_confidence = [(item['word'], item['start'],item['end']) for item in all_text_contents]
+
+# print(words_with_confidence)
+
+with open('output_json_file_final_now.json', 'w') as f:
+    json.dump(all_text_contents, f, indent=4)
+    
+    

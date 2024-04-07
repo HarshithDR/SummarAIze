@@ -5,7 +5,7 @@ from moviepy.editor import *
 video_clip = VideoFileClip("C:\\Users\\harsh\Desktop\\Python Projects\\SummarAIze\\Backend\\sample_data\\sample.mp4")
 
 # Load the captions from JSON
-with open("C:\\Users\\harsh\\Desktop\\Python Projects\\SummarAIze\\output_json_file_final.json", "r") as f:
+with open("C:\\Users\\harsh\\Desktop\\Python Projects\\SummarAIze\\Backend\\sample_data\\output_json_file_final.json", "r") as f:
     captions_data = json.load(f)
 
 # Extract start time, end time, and text from each caption data

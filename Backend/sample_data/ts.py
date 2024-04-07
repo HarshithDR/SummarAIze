@@ -34,5 +34,5 @@ print(all_text_contents)
 
 # print(words_with_confidence)
 
-with open('output_json_file_final.json', 'w') as f:
+with open('output_json_file_final_now.json', 'w') as f:
     json.dump(all_text_contents, f, indent=4)

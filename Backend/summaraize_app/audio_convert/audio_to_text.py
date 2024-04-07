@@ -134,10 +134,11 @@ with open('output_json_file.json', 'w') as f:
     json.dump(linelevel_subtitles, f, indent=4)
     
 
-from moviepy.editor import TextClip
+from moviepy.editor import TextClip, CompositeVideoClip, ColorClip
+import numpy as np
 
 
-def create_caption(textJSON, framesize,font = "Arial-Bold",fontsize=80, color='white', bgcolor='blue'):
+def create_caption(textJSON, framesize,font = "Helvetica-Bold",fontsize=80, color='white', bgcolor='blue'):
     wordcount = len(textJSON['textcontents'])
     full_duration = textJSON['end']-textJSON['start']
 
@@ -212,9 +213,6 @@ def create_caption(textJSON, framesize,font = "Arial-Bold",fontsize=80, color='w
 
     return word_clips
 
-
-
-
 from moviepy.editor import TextClip, CompositeVideoClip, concatenate_videoclips,VideoFileClip, ColorClip
 frame_size = (1080,1080)
 
@@ -226,12 +224,16 @@ for line in linelevel_subtitles:
 
 
 # Load the input video
-input_video = VideoFileClip("C:\\Users\\harsh\\Desktop\\Python Projects\\SummarAIze\\Backend\\sample_data\\sample.mp4")
+input_video = VideoFileClip("C:\\Users\\harsh\Desktop\\Python Projects\\SummarAIze\\Backend\\sample_data\\sample.mp4")
 # Get the duration of the input video
 input_video_duration = input_video.duration
+# Create a color clip with the given frame size, color, and duration
+background_clip = ColorClip(size=frame_size, color=(0, 0, 0)).set_duration(input_video_duration)
 
 # If you want to overlay this on the original video uncomment this and also change frame_size, font size and color accordingly.
-final_video = CompositeVideoClip([input_video] + all_linelevel_splits)  # Using the original video as the base
+# final_video = CompositeVideoClip([input_video] + all_linelevel_splits)
+
+final_video = CompositeVideoClip([background_clip] + all_linelevel_splits)
 
 # Set the audio of the final video to be the same as the input video
 final_video = final_video.set_audio(input_video.audio)
