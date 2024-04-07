@@ -8,7 +8,7 @@ import uuid
 
 
 model_path = "Backend/summaraize_app/audio_convert/vosk_model/vosk-model-small-en-us-0.15"
-audio_file = "Backend/summaraize_app/audio_convert/output.wav"
+audio_file = "Backend/summaraize_app/audio_convert/temp_files/output_audio.mp4"
 output_json_file = "Backend/summaraize_app/audio_convert/temp_files/recognized_speech.json"
 
 if not os.path.exists(model_path):
@@ -131,8 +131,9 @@ def json_extract():
         json.dump(linelevel_subtitles, f, indent=4)
 
     print("JSON file 2 created successfully.")
+    return linelevel_subtitles
 
-def create_caption(textJSON, framesize,font = "Helvetica-Bold",fontsize=80, color='white', bgcolor='blue'):
+def create_caption(textJSON, framesize,font = "Arial-Bold",fontsize=80, color='white', bgcolor='blue'):
     wordcount = len(textJSON['textcontents'])
     full_duration = textJSON['end']-textJSON['start']
 
@@ -208,22 +209,25 @@ def create_caption(textJSON, framesize,font = "Helvetica-Bold",fontsize=80, colo
     return word_clips
 
 
-def final_video_generator():
+def final_video_generator(linelevel_subtitles):
+    # Clear the list before adding new caption clips
+    all_linelevel_splits.clear()
+
     for line in linelevel_subtitles:
         out = create_caption(line,frame_size)
         all_linelevel_splits.extend(out)
 
     # Load the input video
-    input_video = VideoFileClip("C:\\Users\\harsh\Desktop\\Python Projects\\SummarAIze\\Backend\\sample_data\\sample.mp4")
+    input_video = VideoFileClip("Backend\\summaraize_app\\audio_convert\\temp_files\\output_video.mp4")
     # Get the duration of the input video
     input_video_duration = input_video.duration
     # Create a color clip with the given frame size, color, and duration
-    background_clip = ColorClip(size=frame_size, color=(0, 0, 0)).set_duration(input_video_duration)
+    # background_clip = ColorClip(size=frame_size, color=(0, 0, 0)).set_duration(input_video_duration)
 
     # If you want to overlay this on the original video uncomment this and also change frame_size, font size and color accordingly.
-    # final_video = CompositeVideoClip([input_video] + all_linelevel_splits)
+    final_video = CompositeVideoClip([input_video] + all_linelevel_splits)
 
-    final_video = CompositeVideoClip([background_clip] + all_linelevel_splits)
+    # final_video = CompositeVideoClip([background_clip] + all_linelevel_splits)
 
     # Set the audio of the final video to be the same as the input video
     final_video = final_video.set_audio(input_video.audio)
@@ -235,7 +239,8 @@ def final_video_generator():
 
 def start():
     audio_to_text()
-    split_text_into_lines()
-    json_extract()
-    create_caption()
-    video_path = final_video_generator()
+    linelevel_subtitles = json_extract()
+    video_path = final_video_generator(linelevel_subtitles)
+    return video_path
+
+# print(start())

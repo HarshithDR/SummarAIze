@@ -79,6 +79,6 @@ def video_gen_fun(promt):
     print(url_from_fal)
     parsed_data = url_from_fal
     video_url = parsed_data['video']['url']
-    save_path = "Backend\\summaraize_app\\video_generation"
+    save_path = "Backend\\summaraize_app\\audio_convert\\temp_files\\"
     download_video(video_url,save_path)
     return True

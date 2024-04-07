@@ -76,6 +76,7 @@ function submitInterests() {
         body: JSON.stringify({ user_interest: interestsString, useremail: 'testuser123@gmail.com' })
     })
     .then(response => {
+        console.log('its response')
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
@@ -85,6 +86,7 @@ function submitInterests() {
         console.log('Response from server:', data);
         // Handle the response from the server if needed
         recordId = JSON.parse(data).record_id;
+        console.log('recordId',recordId)
         get_newsfeed(recordId);
     })
     .catch(error => {
@@ -94,6 +96,7 @@ function submitInterests() {
 
 
 function get_newsfeed(userId) {
+    console.log('Here it is coming')
     // Make an HTTP GET request to the server running on port 5001
     fetch('http://localhost:5001/newsfeed?user_id='+userId, {
         method: 'GET',

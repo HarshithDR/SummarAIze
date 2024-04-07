@@ -147,8 +147,9 @@
 
   <!-- Template Main JS File -->
   <script>
+    var categoriesAndVideos = []
     // Example data with categories and videos
-    var categoriesAndVideos = [
+   /* var categoriesAndVideos = [
       {
         category: 'Category 1',
         videos: [
@@ -179,7 +180,7 @@
           { url: 'video2_cat2.mp4' }
         ]
       }
-    ];
+    ];*/
 
     // Main container where you want to append all categories and videos
     var mainContainer = document.getElementById('main');
@@ -314,7 +315,7 @@ if (video.url2) {
         }
       });
 
-      rightArrow.addEventListener('click', function () {
+     /* rightArrow.addEventListener('click', function () {
         const currentVideoContainer = modalVideo.parentElement;
         const nextVideoContainer = currentVideoContainer.nextElementSibling;
         if (nextVideoContainer) {
@@ -338,7 +339,7 @@ if (video.url2) {
           modalVideo.play();
           currentVideoIndex--;
         }
-      });
+      });*/
     });
 
   </script>

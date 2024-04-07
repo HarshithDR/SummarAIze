@@ -19,9 +19,10 @@ def summarize_model_text(text, max_length=100):
   summary = load_model.summarizer_model(text, max_length=max_length, truncation=True)
   return summary[0]["summary_text"]
 
-def file_load():
-    with open('Backend\summaraize_app\json_folder\Adobes_new_GenStudio_platform_is_an_AI_factory_for_advertisers.json', 'r', encoding='utf-8') as f:
+def file_load(json_path):
+    with open(json_path, 'r', encoding='utf-8') as f:
         captions_data = json.load(f)
 
     summary = summarize_model_text(captions_data['content'])
     print(summary)
+    return summary

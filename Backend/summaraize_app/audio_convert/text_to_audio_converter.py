@@ -1,11 +1,12 @@
 from TTS.api import TTS
 
-class model_load:
-    tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2", gpu=False)
+# class model_load:
+#     tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2", gpu=False)
     
 def converter(text):
-    model_load.tts.tts_to_file(text="Nischal says we will win and I believe it",
-                file_path="Backend/summaraize_app/audio_convert/temp_files/output.wav",
-                speaker_wav="reference_voice.wav",
+    tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2", gpu=False)
+    tts.tts_to_file(text=text,
+                file_path="Backend/summaraize_app/audio_convert/temp_files/output_audio.mp4",
+                speaker_wav="Backend\\summaraize_app\\audio_convert\\reference_voice.wav",
                 language="en")
     return True
