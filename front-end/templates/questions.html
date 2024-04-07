@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embedded Website with Chatbot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    .column {
+      flex: 1;
+      margin: 20px;
+    }
+
+    iframe {
+      width: 100%;
+      border: none;
+      margin-bottom: 20px;
+    }
+
+    #chatbot-container {
+      border: 1px solid #ddd;
+    }
+
+    #chatbot {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      height: 300px;
+      overflow-y: auto;
+      border-bottom: 1px solid #ddd;
+    }
+
+    #chatbot li {
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+
+    #chatbot .bot {
+      text-align: left;
+    }
+
+    #chatbot .user {
+      text-align: right;
+    }
+
+    #chat-input-container {
+      padding: 10px;
+    }
+
+    #chat-input {
+      width: calc(100% - 120px);
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-right: 10px;
+      display: inline-block;
+    }
+
+    #chat-submit {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="column">
+    <h2>Webpage Contents</h2>
+    <iframe src="https://en.wikipedia.org/wiki/Artificial_intelligence" height="600"></iframe>
+  </div>
+
+  <div class="column" id="chatbot-container">
+    <h2>Chatbot</h2>
+    <ul id="chatbot">
+      <!-- Chat messages will be appended here -->
+      <li class="bot">Hello! What would you like to know about Artificial Intelligence?</li>
+    </ul>
+    <div id="chat-input-container">
+      <input type="text" id="chat-input" placeholder="Ask me something..." />
+      <button id="chat-submit">Send</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('chat-submit').onclick = function() {
+      var input = document.getElementById('chat-input');
+      var message = input.value.trim();
+
+      if (message) {
+        appendMessage('user', message);
+        // Simulate a reply from the bot
+        setTimeout(function() {
+          appendMessage('bot', 'Let me look that up for you...');
+          // Here you would typically send a message to your backend service
+          // and get a response. For now, we'll just simulate a response.
+          setTimeout(function() {
+            appendMessage('bot', 'Artificial Intelligence (AI) is intelligence demonstrated by machines, in contrast to the natural intelligence displayed by humans and animals...');
+          }, 1500);
+        }, 500);
+      }
+
+      input.value = ''; // Clear input field
+      input.focus(); // Keep focus on input
+    };
+
+    function appendMessage(sender, message) {
+      var chatbot = document.getElementById('chatbot');
+      var li = document.createElement('li');
+      li.className = sender;
+      li.textContent = message;
+      chatbot.appendChild(li);
+
+      // Scroll to the latest message
+      chatbot.scrollTop = chatbot.scrollHeight;
+    }
+  </script>
+</body>
+</html>
