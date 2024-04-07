@@ -1,3 +1,4 @@
+from apscheduler.schedulers.background import BackgroundScheduler
 from flask import Flask,request,jsonify
 from user_interest.userinterest import *
 from user_feed.userfeed import *
@@ -8,6 +9,15 @@ import flow
 app = Flask(__name__)
 CORS(app)
 
+# Initialize the scheduler
+scheduler = BackgroundScheduler()
+scheduler.start()
+
+def scheduled_task():
+    flow.start()
+
+# Schedule the task to run every hour
+scheduler.add_job(scheduled_task, 'interval', hours=1)
 
 @app.route('/interests', methods=['POST','GET'])
 def userinterest():
