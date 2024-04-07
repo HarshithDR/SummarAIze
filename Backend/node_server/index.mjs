@@ -9,19 +9,7 @@ export async function brx_image_generator (userprompt) {
     brxObject.input['input'].value = "ball";
     brxObject.input['image_var'].value = userprompt; //change only this parameter
 
-
-    await brx.execute(brxObject, (event) => {
-        console.log("Inline Event...")
-        console.log(event)
-    })
-    .then((result) => {
-        console.log("Result...")
-        console.log(result)
-        return {"success":true,"result":result}
-    }).catch((error) => {
-        console.log("Error...")
-        console.log(error)
-        return {"success":false,"result":result, "error":error}
-    });
+    return await brx.execute(brxObject)
+    
 
 }

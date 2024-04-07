@@ -6,7 +6,7 @@ const app = express();
 
 const PORT = 3000;
 
-app.get('/user_prompt', (req, res) => {
+app.get('/user_prompt', async (req, res) => {
     const parsedUrl = parse(req.url);
 
     // Get the query string
@@ -18,7 +18,10 @@ app.get('/user_prompt', (req, res) => {
     // Get the value of the 'user_prompt' parameter
     const userPromptValue = queryParams.user_prompt;
     console.log(userPromptValue)
-    res.send(brx_image_generator(userPromptValue));
+    //res.send({"data":"test data"})
+    const responseData = await brx_image_generator(userPromptValue)
+    console.log(responseData)
+    res.send(responseData);
 });
 
 app.listen(PORT, () => {
