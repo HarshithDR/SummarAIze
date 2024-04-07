@@ -1,7 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 import json
-import os
 import string
 
 def sanitize_filename(title):
@@ -13,7 +12,7 @@ def sanitize_filename(title):
 
 def save_article_json(article_data):
     """Saves the article data in a JSON format file named after the article's title."""
-    filename = "Backend/summaraize_app/json_folder" + sanitize_filename(article_data['title']) + '.json'
+    filename = "Backend/summaraize_app/json_folder/" + sanitize_filename(article_data['title']) + '.json'
     try:
         with open(filename, 'w', encoding='utf-8') as file:
             json.dump(article_data, file, ensure_ascii=False, indent=4)
@@ -46,19 +45,21 @@ def get_news_articles(query):
     parameters = {
         'q': query,
         'apiKey': api_key,
-        'pageSize': 1,  
+        'pageSize': 10,  
     }
     
     try:
         response = requests.get(url, params=parameters)
         response.raise_for_status()
+        articles_data = []
         for article in response.json().get('articles', []):
-            articles_data = {
+            articles_data.append({
                 'title': article['title'],
                 'url': article['url'],
                 'publishedAt': article['publishedAt'],
                 'content': None
-            }
+            })
+        # print(articles_data)
         return articles_data
     except requests.RequestException as e:
         print(f"Failed to retrieve news articles. Error: {e}")
