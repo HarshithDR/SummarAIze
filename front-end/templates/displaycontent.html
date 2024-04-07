@@ -151,12 +151,12 @@
     // Example data with categories and videos
    var categoriesAndVideos = [
       {
-        category: 'Category 1',
+        category: 'Science',
         videos: [
-          { url: '{{ url_for("static", filename="video/output_0b0cdbda-d80c-4726-82c6-c93d8a3a0fb0.mp4") }}', text1: 'For Complete information, click Source', url2: 'https://www.wired.com/story/fast-forward-forget-chatbots-ai-agents-are-the-future/'},
+          { url: '{{ url_for("static", filename="video/output_8d69543d-c04a-4ed5-8321-dca686381ab4.mp4") }}', text1: 'For Complete information, click Source', url2: 'https://www.wired.com/story/fast-forward-forget-chatbots-ai-agents-are-the-future/'},
           { url: '{{ url_for("static", filename="video/output_3e31b4de-9f45-4031-a7b8-26506363f4b1.mp4") }}', text1: 'For Complete information, click Source', url2: 'https://www.wired.com/story/apple-google-gemini-iphone/'},
           { url: '{{ url_for("static", filename="video/output_6f7f9362-d8e2-40b9-a9bb-42fbe4eec5f3.mp4") }}', text1: 'For Complete information, click Source', url2: 'https://www.wired.com/story/proof-you-can-train-ai-without-slurping-copyrighted-content/'},
-          { url: '{{ url_for("static", filename="video/output_8d69543d-c04a-4ed5-8321-dca686381ab4.mp4") }}', text1: 'For Complete information, click Source', url2: 'https://www.wired.com/story/fast-forward-forget-chatbots-ai-agents-are-the-future/'},
+          { url: '{{ url_for("static", filename="video/output_0b0cdbda-d80c-4726-82c6-c93d8a3a0fb0.mp4") }}', text1: 'For Complete information, click Source', url2: 'https://www.wired.com/story/fast-forward-forget-chatbots-ai-agents-are-the-future/'},
           { url: '{{ url_for("static", filename="video/output_20bd2aa1-207e-4631-a63d-a8ca4d8ae490.mp4") }}', text1: 'For Complete information, click Source', url2: 'https://www.wired.com/story/apple-ios-google-chrome-critical-update-march/'},
           { url: '{{ url_for("static", filename="video/output_71db2438-99ff-46d7-864f-d8f43847c150.mp4") }}', text1: 'For Complete information, click Source', url2: 'https://readwrite.com/el-salvador-gained-84m-from-bitcoin-holdings/'},
           { url: '{{ url_for("static", filename="video/output_642f78f5-ce84-4288-a7c0-42b05800037a.mp4") }}', text1: 'For Complete information, click Source', url2: 'https://www.wired.com/story/apple-google-gemini-iphone/'},
@@ -166,7 +166,7 @@
         ]
       },
       {
-        category: 'Category 2',
+        category: 'Sports',
         videos: [
         { url: '{{ url_for("static", filename="video/output_71db2438-99ff-46d7-864f-d8f43847c150.mp4") }}', text1: 'For Complete information, click Source', url2: 'https://readwrite.com/el-salvador-gained-84m-from-bitcoin-holdings/' },
   { url: '{{ url_for("static", filename="video/output_0b0cdbda-d80c-4726-82c6-c93d8a3a0fb0.mp4") }}', text1: 'For Complete information, click Source', url2: 'https://www.wired.com/story/fast-forward-forget-chatbots-ai-agents-are-the-future/' },
@@ -284,7 +284,7 @@ if (video.url2) {
       const rightArrow = document.querySelector('.right-arrow');
       const leftArrow = document.querySelector('.left-arrow');
       let currentVideoIndex = 0;
-
+    
       document.querySelectorAll('.video-item video').forEach(video => {
         video.addEventListener('click', function () {
           const videoSource = this.getElementsByTagName('source')[0].src;
@@ -293,17 +293,16 @@ if (video.url2) {
           modalVideo.muted = true; // Mute the video
           modalVideo.load(); // Force reload with new source
           modal.style.display = 'flex'; // Display the modal
-          modalVideo.play(); // Try to play the video
           rightArrow.style.display = 'block'; // Show right arrow
           leftArrow.style.display = 'block'; // Show left arrow
           currentVideoIndex = Array.from(this.parentElement.children).indexOf(this.parentElement.querySelector('.video-item'));
         });
       });
-
+    
       modalVideo.onloadeddata = () => {
-        modalVideo.play();
+        // Don't play the video here
       };
-
+    
       modal.addEventListener('click', function (e) {
         if (e.target === modal) {
           modalVideo.pause();
@@ -313,6 +312,15 @@ if (video.url2) {
           leftArrow.style.display = 'none'; // Hide left arrow
         }
       });
+    
+      modal.addEventListener('transitionend', function (e) {
+        if (window.getComputedStyle(modal).display === 'flex') {
+          modalVideo.play(); // Play the video when the modal is visible
+        }
+      });
+    });
+    
+    
 
      /* rightArrow.addEventListener('click', function () {
         const currentVideoContainer = modalVideo.parentElement;
@@ -339,7 +347,7 @@ if (video.url2) {
           currentVideoIndex--;
         }
       });*/
-    });
+    
 
   </script>
 
