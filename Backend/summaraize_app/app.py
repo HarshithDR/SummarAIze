@@ -17,7 +17,7 @@ def scheduled_task():
     flow.start()
 
 # Schedule the task to run every hour
-scheduler.add_job(scheduled_task, 'interval', hours=1)
+scheduler.add_job(scheduled_task, 'interval', hours=2)
 
 @app.route('/interests', methods=['POST','GET'])
 def userinterest():
