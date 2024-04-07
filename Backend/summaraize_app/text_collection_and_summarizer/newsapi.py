@@ -22,7 +22,7 @@ def save_article_json(article_data):
         print(f"Failed to save article data. Error: {e}")
 
 def parse_article_content(html_content):
-    """Parses the HTML content to extract content paragraphs."""
+    """Parses the HTML content to extract contemmmnt paragraphs."""
     soup = BeautifulSoup(html_content, 'html.parser')
     content_paragraphs = soup.find_all('p')
     content = '\n'.join(p.text.strip() for p in content_paragraphs)
