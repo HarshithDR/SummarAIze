@@ -3,16 +3,22 @@ from user_interest.userinterest import *
 from user_feed.userfeed import *
 from chatbot.chatbot import *
 from flask_cors import CORS
+import flow
+
 app = Flask(__name__)
 CORS(app)
+
+
 @app.route('/interests', methods=['POST','GET'])
 def userinterest():
     data = request.json
     user_email = data.get('useremail')
     user_interest = data.get('user_interest')
-    return set_user_interests(user_email,user_interest)
-
-
+    report = set_user_interests(user_email,user_interest)
+    if report['success']:
+        flow.start()
+    print(2342342143)
+    return report
 
 @app.route('/newsfeed', methods=['GET'])
 def newsfeed():

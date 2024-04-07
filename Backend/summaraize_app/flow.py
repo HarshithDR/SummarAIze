@@ -3,12 +3,15 @@ from summarize import summarizer
 from audio_convert import audio_converter
 
 
-# newsapi.newsapi_fun("bitcoin")
+def load_all_the_models():
+    summarizer.load_model
+    audio_converter.model_load
 
-# summarizer.load_model
-
+def api_and_json_extraction(interests):
+    list_of_all_the_json_filepaths = newsapi.newsapi_fun(interests)
+    
+    
+# def 
 # summarizer.file_load()
 
-audio_converter.model_load
-audio_converter.converter('Hi this is sample voice, i am working on integrating every component built by everyone.')
-
+# audio_converter.converter(text)
