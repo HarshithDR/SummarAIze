@@ -50,5 +50,4 @@ def start():
         video_gen(summary)
         video_path = final_video_creater()\
         
-        
 start()
