@@ -11,10 +11,11 @@
   "devDependencies": {
     "@types/node": "^20.11.30"
   },
+  "type": "module",
   "name": "node_server",
   "description": "This is a simple quick start repo for the BRX-node package",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "keywords": [],
   "author": "",
   "license": "ISC"
