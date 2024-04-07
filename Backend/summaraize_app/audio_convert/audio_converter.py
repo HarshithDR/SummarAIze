@@ -1,7 +1,7 @@
 from TTS.api import TTS
 
 class model_load:
-    tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2", gpu=True)
+    tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2", gpu=False)
     
 def converter(text):
     model_load.tts.tts_to_file(text="Nischal says we will win and I believe it",

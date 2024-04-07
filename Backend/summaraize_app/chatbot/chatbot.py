@@ -1,6 +1,6 @@
-from diffusers import StableDiffusionPipeline
+# from diffusers import StableDiffusionPipeline
 from transformers import pipeline
-import torch
+# import torch
 
 
 def run_chatbot(user_question):
