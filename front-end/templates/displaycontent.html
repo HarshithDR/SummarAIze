@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>SummarAIze</title>
+  <title>SUMMARAIZE</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -16,7 +16,9 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -29,103 +31,62 @@
   <link href="static/css/variables.css" rel="stylesheet">
   <link href="static/css/main.css" rel="stylesheet">
 
-
   <style>
     .video-container {
-      overflow-x: auto; /* Enable horizontal scrolling */
-      white-space: nowrap; /* Prevent videos from wrapping to the next line */
-      margin-bottom: 20px; /* Add some space at the bottom */
+      overflow-x: auto;
+      white-space: nowrap;
+      margin-bottom: 20px;
     }
+
     .video-item {
-      display: inline-block; /* Display videos inline */
-      margin-right: 10px; /* Add some space between videos */
+      display: inline-block;
+      margin-right: 10px;
+      cursor: pointer;
+      /* Add cursor pointer for video items */
     }
-
-
 
     .modal-backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: none; /* initially hidden */
-  justify-content: center;
-  align-items: center;
-  z-index: 1050; /* Ensure it's above other content */
-}
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1050;
+    }
 
-.modal-video {
-  width: 70%; /* Adjust size as necessary */
-  z-index: 1060;
-}
-
-
-
+    .modal-video {
+      width: 70%;
+      z-index: 1060;
+    }
 
     /* Arrow style */
-.arrow {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 24px;
-  color: #fff;
-  z-index: 1000;
-  background: rgba(0,0,0,0.5);
-  padding: 10px;
-  border-radius: 50%;
-}
+    .arrow {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      color: #fff;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      border-radius: 50%;
+      display: none;
+      /* Initially hide the arrows */
+    }
 
-.left-arrow {
-  left: 10px;
-}
+    .left-arrow {
+      left: 10px;
+    }
 
-.right-arrow {
-  right: 10px;
-}
-
-  .video-container-wrapper {
-    position: relative;
-    width: 100%;
-  }
-
-  .video-container {
-    display: flex; /* Use flexbox for inline display of videos */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    margin-bottom: 20px; /* Add some space at the bottom */
-  }
-
-  .video-item {
-    flex: 0 0 auto; /* Do not stretch the video items */
-    margin-right: 10px; /* Add some space between videos */
-  }
-
-  .arrow {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 24px;
-    color: #fff;
-    z-index: 1000;
-    background: rgba(0,0,0,0.5);
-    padding: 10px;
-    border-radius: 50%;
-  }
-
-  .left-arrow {
-    left: 0;
-  }
-
-  .right-arrow {
-    right: 0;
-  }
-
-
+    .right-arrow {
+      right: 10px;
+    }
   </style>
-
 
 </head>
 
@@ -134,38 +95,26 @@
   <!-- ======= Header ======= -->
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-
       <a href="/" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
         <img src="static/img/logo.png" alt="">
-        <h1>SummarAIze</h1>
+        <h1>SUMMARAIZE</h1>
       </a>
-
-      <nav id="navbar" class="navbar">
-        
-      </nav><!-- .navbar -->
-
+      <nav id="navbar" class="navbar"></nav>
       <div class="position-relative">
         <a href="#" class="mx-2"><span class="bi-facebook"></span></a>
         <a href="#" class="mx-2"><span class="bi-twitter"></span></a>
         <a href="#" class="mx-2"><span class="bi-instagram"></span></a>
-
         <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
         <i class="bi bi-list mobile-nav-toggle"></i>
-
-        <!-- ======= Search Form ======= -->
         <div class="search-form-wrap js-search-form-wrap">
           <form action="search-result.html" class="search-form">
             <span class="icon bi-search"></span>
             <input type="text" placeholder="Search" class="form-control">
             <button class="btn js-search-close"><span class="bi-x"></span></button>
           </form>
-        </div><!-- End Search Form -->
-
+        </div>
       </div>
-
     </div>
-
   </header><!-- End Header -->
 
   <main id="main">
@@ -173,28 +122,20 @@
       <table class="table" id="videoTable">
         <thead>
           <tr>
-            
             <!-- <th>Videos</th> -->
           </tr>
         </thead>
         <tbody>
-            
+
         </tbody>
       </table>
     </div>
-  </main>
-  <!-- End #main -->
+  </main><!-- End #main -->
 
-    <!-- Modal Backdrop -->
-    <div id="videoModal" class="modal-backdrop">
-      <video class="modal-video" controls muted="muted"></video>
+  <!-- Modal Backdrop -->
+  <div id="videoModal" class="modal-backdrop">
+    <video class="modal-video" controls muted="muted"></video>
   </div>
-
-
-  
-
-
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -203,268 +144,209 @@
   <script src="static/vendor/aos/aos.js"></script>
   <script src="static/vendor/php-email-form/validate.js"></script>
 
-
-  <div class="video-container" id="videoContainer">
-    <div class="arrow left-arrow" onclick="scrollVideo('left')">&lt;</div>
-
-
-    
-        <div class="arrow right-arrow" onclick="scrollVideo('right')">&gt;</div>
-        
-      
-  </div>
-
-
-
-  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-
- 
-
-
   <!-- Template Main JS File -->
   <script>
- 
+    // Example data with categories and videos
+    var categoriesAndVideos = [
+      {
+        category: 'Category 1',
+        videos: [
+          { url: 'https://media.geeksforgeeks.org/wp-content/uploads/20231020155223/Full-Stack-Development-_-LIVE-Classes-_-GeeksforGeeks.mp4', text1: 'For Complete information, click Source' },
+          { url: 'https://media.geeksforgeeks.org/wp-content/uploads/20231020155223/Full-Stack-Development-_-LIVE-Classes-_-GeeksforGeeks.mp4', text1: 'For Complete information, click Source' },
+          { url: 'https://media.geeksforgeeks.org/wp-content/uploads/20231020155223/Full-Stack-Development-_-LIVE-Classes-_-GeeksforGeeks.mp4', text1: 'For Complete information, click Source' },
+          { url: 'https://media.geeksforgeeks.org/wp-content/uploads/20231020155223/Full-Stack-Development-_-LIVE-Classes-_-GeeksforGeeks.mp4', text1: 'For Complete information, click Source' },
+          { url: 'https://media.geeksforgeeks.org/wp-content/uploads/20231020155223/Full-Stack-Development-_-LIVE-Classes-_-GeeksforGeeks.mp4', text1: 'For Complete information, click Source' },
+          { url: 'https://media.geeksforgeeks.org/wp-content/uploads/20231020155223/Full-Stack-Development-_-LIVE-Classes-_-GeeksforGeeks.mp4', text1: 'For Complete information, click Source' },
+          { url: 'https://media.geeksforgeeks.org/wp-content/uploads/20231020155223/Full-Stack-Development-_-LIVE-Classes-_-GeeksforGeeks.mp4', text1: 'For Complete information, click Source' },
+          { url: 'https://media.geeksforgeeks.org/wp-content/uploads/20231020155223/Full-Stack-Development-_-LIVE-Classes-_-GeeksforGeeks.mp4', text1: 'For Complete information, click Source' },
+          { url: 'https://media.geeksforgeeks.org/wp-content/uploads/20231020155223/Full-Stack-Development-_-LIVE-Classes-_-GeeksforGeeks.mp4', text1: 'For Complete information, click Source' },
+          { url: 'https://media.geeksforgeeks.org/wp-content/uploads/20231020155223/Full-Stack-Development-_-LIVE-Classes-_-GeeksforGeeks.mp4', text1: 'For Complete information, click Source' },
+          { url: 'https://media.geeksforgeeks.org/wp-content/uploads/20231020155223/Full-Stack-Development-_-LIVE-Classes-_-GeeksforGeeks.mp4', text1: 'For Complete information, click Source' }
 
-
-// Example data with categories and videos
-var categoriesAndVideos = [
-  {
-    category: 'Category 1',
-    videos: [
-      { url: 'https://media.geeksforgeeks.org/wp-content/uploads/20231020155223/Full-Stack-Development-_-LIVE-Classes-_-GeeksforGeeks.mp4', text1: 'this is the text', text2: 'this is the text'},
-
-      { url: 'https://media.geeksforgeeks.org/wp-content/uploads/20231020155223/Full-Stack-Development-_-LIVE-Classes-_-GeeksforGeeks.mp4', text1: 'this is the text', text2: 'this is the text'},
-      { url: 'https://media.geeksforgeeks.org/wp-content/uploads/20231020155223/Full-Stack-Development-_-LIVE-Classes-_-GeeksforGeeks.mp4', text1: 'this is the text', text2: 'this is the text'},
-
-      { url: 'video2_cat1.mp4' },
-      { url: 'video1_cat1.mp4' },
-      { url: 'video2_cat1.mp4' },
-      { url: 'video1_cat1.mp4' },
-      { url: 'video2_cat1.mp4' },
-      { url: 'video1_cat1.mp4' },
-      { url: 'video2_cat1.mp4' }
-    ]
-  },
-  {
-    category: 'Category 2',
-    videos: [
-      { url: 'video1_cat2.mp4' },
-      { url: 'video2_cat2.mp4' },
-      { url: 'video1_cat2.mp4' },
-      { url: 'video2_cat2.mp4' },
-      { url: 'video1_cat2.mp4' },
-      { url: 'video2_cat2.mp4' },
-      { url: 'video1_cat2.mp4' },
-      { url: 'video2_cat2.mp4' }
-    ]
-  },
-  {
-    category: 'Category 2',
-    videos: [
-      { url: 'video1_cat2.mp4' },
-      { url: 'video2_cat2.mp4' },
-      { url: 'video1_cat2.mp4' },
-      { url: 'video2_cat2.mp4' },
-      { url: 'video1_cat2.mp4' },
-      { url: 'video2_cat2.mp4' },
-      { url: 'video1_cat2.mp4' },
-      { url: 'video2_cat2.mp4' }
-    ]
-  }
-
-  // More categories and videos as needed
-];
-
-// Main container where you want to append all categories and videos
-var mainContainer = document.getElementById('main');
-
-
-
-
-
-
-function addCategoriesAndVideos() {
-  categoriesAndVideos.forEach(function(categoryObj, index) {
-    // Create category header
-    var categoryHeader = document.createElement('h2');
-    categoryHeader.textContent = categoryObj.category;
-    mainContainer.appendChild(categoryHeader);
-    
-    // Create a wrapper for the video container and arrows
-    var videoWrapper = document.createElement('div');
-    videoWrapper.className = 'video-wrapper';
-    
-    // Create the left arrow for this category
-    var leftArrow = document.createElement('div');
-    leftArrow.className = 'arrow left-arrow';
-    leftArrow.textContent = '<';
-    leftArrow.onclick = function() {
-      scrollVideo('videoContainer' + index, 'left');
-    };
-    
-    // Create the video container for this category
-    var videoContainer = document.createElement('div');
-    videoContainer.className = 'video-container';
-    videoContainer.id = 'videoContainer' + index;
-
-    // Add videos and optional text under each video
-    categoryObj.videos.forEach(function(video, vidIndex) {
-      var videoItem = document.createElement('div');
-      videoItem.className = 'video-item';
-
-      var videoElement = document.createElement('video');
-      videoElement.controls = true;
-      videoElement.autoplay = true;
-      videoElement.muted = true;
-      videoElement.loop = true;
-      videoElement.width = 320; // Set a width or use CSS classes
-      
-      var sourceElement = document.createElement('source');
-      sourceElement.src = video.url;
-      sourceElement.type = 'video/mp4';
-      
-      videoElement.appendChild(sourceElement);
-      videoItem.appendChild(videoElement);
-
-      // Add text below the video if it exists in the video object
-      if (video.text1) {
-        var textPara1 = document.createElement('p');
-        textPara1.textContent = video.text1;
-        videoItem.appendChild(textPara1);
+        ]
+      },
+      {
+        category: 'Category 2',
+        videos: [
+          { url: 'video1_cat2.mp4' },
+          { url: 'video2_cat2.mp4' },
+          { url: 'video1_cat2.mp4' },
+          { url: 'video2_cat2.mp4' },
+          { url: 'video1_cat2.mp4' },
+          { url: 'video2_cat2.mp4' },
+          { url: 'video1_cat2.mp4' },
+          { url: 'video2_cat2.mp4' }
+        ]
       }
+    ];
 
-      if (video.text2) {
-        var textPara2 = document.createElement('p');
-        textPara2.textContent = video.text2;
-        videoItem.appendChild(textPara2);
-      }
+    // Main container where you want to append all categories and videos
+    var mainContainer = document.getElementById('main');
 
-      videoContainer.appendChild(videoItem);
+    function addCategoriesAndVideos() {
+      categoriesAndVideos.forEach(function (categoryObj, index) {
+        // Create category header
+        var categoryHeader = document.createElement('h2');
+        categoryHeader.textContent = categoryObj.category;
+        mainContainer.appendChild(categoryHeader);
 
-      // If you want specific text under specific videos, check vidIndex
-      // if(vidIndex === specificIndex) { // where specificIndex is the index of the video
-      //   var specificText = document.createElement('p');
-      //   specificText.textContent = "Specific text for this video";
-      //   videoItem.appendChild(specificText);
-      // }
-    });
+        // Create a wrapper for the video container and arrows
+        var videoWrapper = document.createElement('div');
+        videoWrapper.className = 'video-wrapper';
 
-    // Create the right arrow for this category
-    var rightArrow = document.createElement('div');
-    rightArrow.className = 'arrow right-arrow';
-    rightArrow.textContent = '>';
-    rightArrow.onclick = function() {
-      scrollVideo('videoContainer' + index, 'right');
-    };
-    
-    // Append everything to the wrapper
-    videoWrapper.appendChild(leftArrow);
-    videoWrapper.appendChild(videoContainer);
-    videoWrapper.appendChild(rightArrow);
+        // Create the left arrow for this category
+        var leftArrow = document.createElement('div');
+        leftArrow.className = 'arrow left-arrow';
+        leftArrow.textContent = '<';
+        leftArrow.onclick = function () {
+          scrollVideo('videoContainer' + index, 'left');
+        };
 
-    // Append the wrapper to the main container
-    mainContainer.appendChild(videoWrapper);
-  });
-}
+        // Create the right arrow for this category
+        var rightArrow = document.createElement('div');
+        rightArrow.className = 'arrow right-arrow';
+        rightArrow.textContent = '>';
+        rightArrow.onclick = function () {
+          scrollVideo('videoContainer' + index, 'right');
+        };
 
+        // Create the video container for this category
+        var videoContainer = document.createElement('div');
+        videoContainer.className = 'video-container';
+        videoContainer.id = 'videoContainer' + index;
 
-function scrollVideo(containerId, direction) {
-  var container = document.getElementById(containerId);
-  var scrollAmount = direction === 'left' ? -100 : 100; // Adjust these values as needed
-  container.scrollLeft += scrollAmount;
-}
+        // Add videos and optional text under each video
+        // Add videos and optional text under each video
+        categoryObj.videos.forEach(function (video, vidIndex) {
+          var videoItem = document.createElement('div');
+          videoItem.className = 'video-item';
 
+          var videoElement = document.createElement('video');
+          videoElement.controls = true;
+          videoElement.width = 320; // Set a width or use CSS classes
 
-// Call the function to add categories and videos
-addCategoriesAndVideos();
+          var sourceElement = document.createElement('source');
+          sourceElement.src = video.url;
+          sourceElement.type = 'video/mp4';
 
+          videoElement.appendChild(sourceElement);
+          videoItem.appendChild(videoElement);
 
+          // Add text below the video if it exists in the video object
+          if (video.text1) {
+            var text1 = document.createElement('p');
+            text1.textContent = video.text1;
+            videoItem.appendChild(text1);
+          }
 
+          // Add the "Source.." link below the video
+          if (video.text1) {
+            var link1 = document.createElement('a');
+            link1.textContent = 'Source..';
+            link1.href = '/questions';
+            videoItem.appendChild(link1);
+          }
 
-
-document.addEventListener('DOMContentLoaded', function() {
-    const modal = document.getElementById('videoModal');
-    const modalVideo = document.querySelector('.modal-video');
-
-
-
-// document.querySelectorAll('.video-item video').forEach(video => {
-//     video.addEventListener('click', function() {
-//         const videoSource = this.getElementsByTagName('source')[0].src;
-//         console.log("Video source set to: ", videoSource);
-//         modalVideo.src = videoSource;
-//         modalVideo.load();  // Force reload with new source
-
-//         const modal = document.getElementById('videoModal');
-//         modal.style.display = 'flex';  // Ensure this is set correctly
-//     });
-// });
-
-// modalVideo.onloadeddata = () => {
-//     modalVideo.play();
-// };
-
-document.querySelectorAll('.video-item video').forEach(video => {
-    video.addEventListener('click', function() {
-        const videoSource = this.getElementsByTagName('source')[0].src;
-        console.log("Video source set to: ", videoSource); // Debug output
-        const modalVideo = document.querySelector('.modal-video');
-        modalVideo.src = videoSource;
-        modalVideo.muted = true; // Mute the video
-        modalVideo.load(); // Force reload with new source
-        const modal = document.getElementById('videoModal');
-        modal.style.display = 'flex';  // Display the modal
-        modalVideo.play(); // Try to play the video
-    });
-});
-
-modalVideo.onloadeddata = () => {
-    modalVideo.play();
-};
+          videoContainer.appendChild(videoItem);
+        });
 
 
+        // Append the left and right arrows and video container to the wrapper
+        videoWrapper.appendChild(leftArrow);
+        videoWrapper.appendChild(videoContainer);
+        videoWrapper.appendChild(rightArrow);
 
+        // Append the wrapper to the main container
+        mainContainer.appendChild(videoWrapper);
+      });
+    }
 
+    function scrollVideo(containerId, direction) {
+      var container = document.getElementById(containerId);
+      var scrollAmount = direction === 'left' ? -100 : 100; // Adjust these values as needed
+      container.scrollLeft += scrollAmount;
+    }
 
-    modal.addEventListener('click', function(e) {
+    // Call the function to add categories and videos
+    addCategoriesAndVideos();
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const modal = document.getElementById('videoModal');
+      const modalVideo = document.querySelector('.modal-video');
+      const rightArrow = document.querySelector('.right-arrow');
+      const leftArrow = document.querySelector('.left-arrow');
+      let currentVideoIndex = 0;
+
+      document.querySelectorAll('.video-item video').forEach(video => {
+        video.addEventListener('click', function () {
+          const videoSource = this.getElementsByTagName('source')[0].src;
+          console.log("Video source set to: ", videoSource); // Debug output
+          modalVideo.src = videoSource;
+          modalVideo.muted = true; // Mute the video
+          modalVideo.load(); // Force reload with new source
+          modal.style.display = 'flex'; // Display the modal
+          modalVideo.play(); // Try to play the video
+          rightArrow.style.display = 'block'; // Show right arrow
+          leftArrow.style.display = 'block'; // Show left arrow
+          currentVideoIndex = Array.from(this.parentElement.children).indexOf(this.parentElement.querySelector('.video-item'));
+        });
+      });
+
+      modalVideo.onloadeddata = () => {
+        modalVideo.play();
+      };
+
+      modal.addEventListener('click', function (e) {
         if (e.target === modal) {
-            modalVideo.pause();
-            modalVideo.src = '';  // Clear the video source
-            modal.style.display = 'none';
+          modalVideo.pause();
+          modalVideo.src = ''; // Clear the video source
+          modal.style.display = 'none';
+          rightArrow.style.display = 'none'; // Hide right arrow
+          leftArrow.style.display = 'none'; // Hide left arrow
         }
+      });
+
+      rightArrow.addEventListener('click', function () {
+        const currentVideoContainer = modalVideo.parentElement;
+        const nextVideoContainer = currentVideoContainer.nextElementSibling;
+        if (nextVideoContainer) {
+          const nextVideo = nextVideoContainer.querySelector('video');
+          const videoSource = nextVideo.querySelector('source').src;
+          modalVideo.src = videoSource;
+          modalVideo.load();
+          modalVideo.play();
+          currentVideoIndex++;
+        }
+      });
+
+      leftArrow.addEventListener('click', function () {
+        const currentVideoContainer = modalVideo.parentElement;
+        const prevVideoContainer = currentVideoContainer.previousElementSibling;
+        if (prevVideoContainer) {
+          const prevVideo = prevVideoContainer.querySelector('video');
+          const videoSource = prevVideo.querySelector('source').src;
+          modalVideo.src = videoSource;
+          modalVideo.load();
+          modalVideo.play();
+          currentVideoIndex--;
+        }
+      });
     });
-});
-
-
 
   </script>
 
-  
-
-  
-
-
-
-<footer id="footer" class="footer">
-
-    
-
+  <footer id="footer" class="footer">
     <div class="footer-legal">
       <div class="container">
-
         <div class="row justify-content-between">
           <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
             <div class="copyright">
-              © Copyright <strong><span>SummarAIze</span></strong>. All Rights Reserved
+              © Copyright <strong><span>SUMMARAIZE</span></strong>. All Rights Reserved
             </div>
-
             <div class="credits">
-              
               Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
             </div>
-
           </div>
-
           <div class="col-md-6">
             <div class="social-links mb-3 mb-lg-0 text-center text-md-end">
               <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
@@ -473,22 +355,11 @@ modalVideo.onloadeddata = () => {
               <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
               <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
             </div>
-
           </div>
-
         </div>
-
       </div>
     </div>
-
   </footer>
-
-
-  
-</body>
-</html>
-
-
 </body>
 
 </html>
