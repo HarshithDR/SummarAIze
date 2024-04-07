@@ -7,7 +7,7 @@ export async function brx_image_generator (userprompt) {
     let brxObject = new BRK(v_chat_ittr1);
 
     brxObject.input['input'].value = "ball";
-    brxObject.input['image_var'].value = "bitcoin"; //change only this parameter
+    brxObject.input['image_var'].value = userprompt; //change only this parameter
 
 
     await brx.execute(brxObject, (event) => {
