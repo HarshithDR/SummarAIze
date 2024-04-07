@@ -32,6 +32,7 @@
   <link href="static/css/main.css" rel="stylesheet">
 
   <style>
+    
     .video-container {
       overflow-x: auto;
       white-space: nowrap;
@@ -151,8 +152,8 @@
       {
         category: 'Category 1',
         videos: [
-          { url: 'https://media.geeksforgeeks.org/wp-content/uploads/20231020155223/Full-Stack-Development-_-LIVE-Classes-_-GeeksforGeeks.mp4', text1: 'For Complete information, click Source' },
-          { url: 'https://media.geeksforgeeks.org/wp-content/uploads/20231020155223/Full-Stack-Development-_-LIVE-Classes-_-GeeksforGeeks.mp4', text1: 'For Complete information, click Source' },
+          { url: 'https://media.geeksforgeeks.org/wp-content/uploads/20231020155223/Full-Stack-Development-_-LIVE-Classes-_-GeeksforGeeks.mp4', text1: 'For Complete information, click Source', url2: 'https://en.wikipedia.org/wiki/Artificial_intelligence'},
+          { url: 'https://media.geeksforgeeks.org/wp-content/uploads/20231020155223/Full-Stack-Development-_-LIVE-Classes-_-GeeksforGeeks.mp4', text1: 'For Complete information, click Source',url2:'https://en.wikipedia.org/wiki/Modal_verb' },
           { url: 'https://media.geeksforgeeks.org/wp-content/uploads/20231020155223/Full-Stack-Development-_-LIVE-Classes-_-GeeksforGeeks.mp4', text1: 'For Complete information, click Source' },
           { url: 'https://media.geeksforgeeks.org/wp-content/uploads/20231020155223/Full-Stack-Development-_-LIVE-Classes-_-GeeksforGeeks.mp4', text1: 'For Complete information, click Source' },
           { url: 'https://media.geeksforgeeks.org/wp-content/uploads/20231020155223/Full-Stack-Development-_-LIVE-Classes-_-GeeksforGeeks.mp4', text1: 'For Complete information, click Source' },
@@ -216,7 +217,6 @@
         videoContainer.id = 'videoContainer' + index;
 
         // Add videos and optional text under each video
-        // Add videos and optional text under each video
         categoryObj.videos.forEach(function (video, vidIndex) {
           var videoItem = document.createElement('div');
           videoItem.className = 'video-item';
@@ -235,17 +235,25 @@
           // Add text below the video if it exists in the video object
           if (video.text1) {
             var text1 = document.createElement('p');
-            text1.textContent = video.text1;
+            text1.textContent = video.text1 + " ";
             videoItem.appendChild(text1);
           }
 
-          // Add the "Source.." link below the video
-          if (video.text1) {
-            var link1 = document.createElement('a');
-            link1.textContent = 'Source..';
-            link1.href = '/questions';
-            videoItem.appendChild(link1);
-          }
+          // Add the "Source" text and link below the video
+if (video.url2) {
+  var sourceText = document.createElement('span');
+  sourceText.textContent = 'Source: ';
+  sourceText.style.color = '#000'; // Black color for "Source" text
+  videoItem.appendChild(sourceText);
+
+  var sourceLink = document.createElement('a');
+  sourceLink.textContent = video.url2.slice(0, 20) + '..';
+  sourceLink.href = '/questions?url=' + encodeURIComponent(video.url2);
+  sourceLink.target = '_self'; // Open link in the same page
+  sourceLink.title = video.url2; // Tooltip with full link
+  videoItem.appendChild(sourceLink);
+}
+
 
           videoContainer.appendChild(videoItem);
         });
@@ -340,11 +348,9 @@
       <div class="container">
         <div class="row justify-content-between">
           <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-            <div class="copyright">
-              © Copyright <strong><span>SUMMARAIZE</span></strong>. All Rights Reserved
-            </div>
+            
             <div class="credits">
-              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+              Designed by <a href="https://bootstrapmade.com/">SUMMARAIZE</a>
             </div>
           </div>
           <div class="col-md-6">
