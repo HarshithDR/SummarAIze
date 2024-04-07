@@ -5,7 +5,7 @@ class model_load:
     
 def converter(text):
     model_load.tts.tts_to_file(text="Nischal says we will win and I believe it",
-                file_path="output.wav",
+                file_path="Backend/summaraize_app/audio_convert/temp_files/output.wav",
                 speaker_wav="reference_voice.wav",
                 language="en")
-    return "reference_voice.wav"
+    return True

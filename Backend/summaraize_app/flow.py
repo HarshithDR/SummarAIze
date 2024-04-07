@@ -1,6 +1,6 @@
 from text_collection_and_summarizer import newsapi
 from summarize import summarizer
-from audio_convert import audio_converter
+from Backend.summaraize_app.audio_convert import text_to_audio_converter
 from video_generation import video_generator
 from dataclasses import dataclass
 
@@ -21,7 +21,7 @@ def start():
 
 def load_all_the_models():
     summarizer.load_model
-    audio_converter.model_load
+    text_to_audio_converter.model_load
 
 def api_and_json_extraction(interests):
     list_of_all_the_json_filepaths = newsapi.newsapi_fun(interests)
