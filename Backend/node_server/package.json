@@ -1,0 +1,14 @@
+{
+	"scripts": {
+		"api-test": "ts-node-esm index.ts"
+	},
+	"dependencies": {
+		"brx-node": "0.6.5-development",
+		"dotenv": "^16.4.5",
+		"ts-node": "^10.9.2"
+	},
+	"devDependencies": {
+		"@types/node": "^20.11.30"
+	},
+	"type": "module"
+}
